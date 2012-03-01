@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# (C) 2012 Fathi Boudra <fathi.boudra@linaro.org>
+
+# Create configuration for live-build.
+
+# You need live-build package installed.
+
+set -e
+
+echo "I: create configuration"
+export LB_BOOTSTRAP_INCLUDE="apt-transport-https gnupg"
+lb config \
+ --apt-indices none \
+ --apt-options "--yes --force-yes" \
+ --architectures armhf \
+ --archive-areas "main universe" \
+ --binary-filesystem ext3 \
+ --binary-images tar \
+ --bootloader none \
+ --bootstrap-flavour standard \
+ --bootstrap-qemu-arch armhf \
+ --bootstrap-qemu-static /usr/bin/qemu-arm-static \
+ --cache false \
+ --chroot-filesystem none \
+ --debian-installer-gui false \
+ --distribution precise \
+ --gzip-options '--best --rsyncable' \
+ --hostname linaro \
+ --initramfs none \
+ --linux-flavours none \
+ --linux-packages none \
+ --mirror-binary "http://ports.ubuntu.com/ubuntu-ports/" \
+ --mirror-binary-security "http://ports.ubuntu.com/ubuntu-ports/" \
+ --mirror-bootstrap "http://ports.ubuntu.com/ubuntu-ports/" \
+ --mirror-chroot "http://ports.ubuntu.com/ubuntu-ports/" \
+ --mirror-chroot-security "http://ports.ubuntu.com/ubuntu-ports/" \
+ --mode ubuntu \
+ --package-lists standard \
+ --parent-debian-installer-distribution precise \
+ --parent-distribution precise \
+ --system normal \
+ --username linaro
+
+echo "I: copy customization"
+cp -rf customization/* config/
+
+echo "I: done"
