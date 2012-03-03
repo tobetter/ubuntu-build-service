@@ -12,10 +12,9 @@ echo "I: create configuration"
 export LB_BOOTSTRAP_INCLUDE="apt-transport-https gnupg"
 lb config \
  --apt-indices none \
- --apt-options "--yes --force-yes" \
  --architectures armhf \
  --archive-areas "main universe" \
- --binary-filesystem ext3 \
+ --binary-filesystem ext4 \
  --binary-images tar \
  --bootloader none \
  --bootstrap-flavour standard \
