@@ -28,6 +28,7 @@ lb config \
  --initramfs none \
  --linux-flavours none \
  --linux-packages none \
+ --mode debian \
  --parent-debian-installer-distribution sid \
  --parent-distribution sid \
  --username linaro
