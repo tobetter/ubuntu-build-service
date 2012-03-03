@@ -36,8 +36,10 @@ lb config \
  --package-lists standard \
  --parent-debian-installer-distribution precise \
  --parent-distribution precise \
+ --security false \
  --system normal \
- --username linaro
+ --username linaro \
+ --volatile false
 
 echo "I: copy customization"
 #cp -rf customization/* config/
