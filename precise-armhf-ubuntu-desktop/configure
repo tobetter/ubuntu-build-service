@@ -33,6 +33,6 @@ lb config \
  --volatile false
 
 echo "I: copy customization"
-#cp -rf customization/* config/
+cp -rf customization/* config/
 
 echo "I: done"
