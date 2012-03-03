@@ -14,5 +14,4 @@ all:
 	set -e; sudo lb build 2>&1 | tee $(LOGFILE)
 
 clean:
-	sudo lb clean
-
+	sudo lb clean --purge
