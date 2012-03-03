@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# (C) 2012 Fathi Boudra <fathi.boudra@linaro.org>
+
+# Create configuration for live-build.
+
+# You need live-build package installed.
+
+set -e
+
+echo "I: create configuration"
+export LB_BOOTSTRAP_INCLUDE="apt-transport-https gnupg initramfs-tools"
+lb config \
+ --apt-indices none \
+ --architectures armhf \
+ --binary-filesystem ext3 \
+ --binary-images tar \
+ --bootloader none \
+ --bootstrap-flavour standard \
+ --bootstrap-qemu-arch armhf \
+ --bootstrap-qemu-static /usr/bin/qemu-arm-static \
+ --cache false \
+ --chroot-filesystem none \
+ --debian-installer-gui false \
+ --distribution sid \
+ --gzip-options '--best --rsyncable' \
+ --hostname linaro \
+ --initramfs none \
+ --linux-flavours none \
+ --linux-packages none \
+ --parent-debian-installer-distribution sid \
+ --parent-distribution sid \
+ --username linaro
+
+echo "I: copy customization"
+#cp -rf customization/* config/
+
+echo "I: done"
