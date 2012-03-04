@@ -13,7 +13,7 @@ export LB_BOOTSTRAP_INCLUDE="apt-transport-https gnupg"
 lb config \
  --apt-indices none \
  --architectures armhf \
- --archive-areas "main universe" \
+ --archive-areas 'main universe' \
  --binary-filesystem ext4 \
  --binary-images tar \
  --bootstrap-flavour standard \
@@ -24,6 +24,8 @@ lb config \
  --distribution precise \
  --gzip-options '-9 --rsyncable' \
  --hostname linaro-ubuntu-desktop \
+ --iso-publisher 'Linaro; http://www.linaro.org/; linaro-dev@lists.linaro.org' \
+ --iso-volume 'Linaro precise $(date +%Y%m%d-%H:%M)' \
  --linux-flavours none \
  --linux-packages none \
  --mode ubuntu \
