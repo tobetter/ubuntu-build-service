@@ -23,7 +23,7 @@ lb config \
  --chroot-filesystem none \
  --distribution precise \
  --gzip-options '-9 --rsyncable' \
- --hostname linaro \
+ --hostname linaro-ubuntu-desktop \
  --linux-flavours none \
  --linux-packages none \
  --mode ubuntu \
