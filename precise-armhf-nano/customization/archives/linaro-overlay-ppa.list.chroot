@@ -1,0 +1,2 @@
+# Linaro Overlay PPA
+deb http://ppa.launchpad.net/linaro-maintainers/overlay/ubuntu @DISTRIBUTION@ main
