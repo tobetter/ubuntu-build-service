@@ -1,7 +1,3 @@
 # Packages needed for Linaro - Ubuntu Desktop
-btrfs-tools
-command-not-found
-gstreamer0.10-ffmpeg
 linaro-overlay-minimal
-ubuntu-desktop
-usbutils
+linaro-ubuntu-desktop

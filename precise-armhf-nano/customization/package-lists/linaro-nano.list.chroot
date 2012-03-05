@@ -1,13 +1,2 @@
 # Packages needed for Linaro - Nano
-apt-utils
-console-setup
-iputils-ping
-isc-dhcp-client
-kbd
-linaro-overlay-minimal
-net-tools
-netbase
-netcat-openbsd
-ntpdate
-rsyslog
-whiptail
+linaro-nano
