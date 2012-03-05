@@ -29,6 +29,7 @@ lb config \
  --linux-flavours none \
  --linux-packages none \
  --mode ubuntu \
+ --package-lists minimal \
  --security false \
  --system normal \
  --username linaro \
