@@ -20,11 +20,9 @@ def main():
     # Download base URL, this may differ from build URL
     download_url = "https://ci.linaro.org/jenkins/job/"
     # Device type
-    device_type = os.environ.get("DEVICE_TYPE", "panda")
+    device_type = os.environ.get("DEVICE_TYPE", "Undefined")
     # Hardware pack name
-    hwpack_name = os.environ.get("HWPACK_NAME", "hwpack_linaro-lt-panda_20120313-0_armhf_supported.tar.gz")
-    # Hardware pack date
-    hwpack_date = os.environ.get("HWPACK_DATE", "20120313")
+    hwpack_name = os.environ.get("HWPACK_NAME", "Undefined")
     # Rootfs type
     rootfs_type = os.getenv("ROOTFS_TYPE", "nano")
     # Bundle stream name
@@ -50,10 +48,8 @@ def main():
         },
         "metadata": {
                 "hwpack.type": "%s" % job_name,
-                "hwpack.date": "%s" % hwpack_date,
                 "hwpack.build": "%s" % build_number,
                 "rootfs.type": "precise-armhf-nano",
-                "rootfs.date": "20120313",
                 "rootfs.build": "%s" % rootfs_build
         }
     },
