@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os
+import sys
 import json
 import xmlrpclib
 import urllib2
@@ -21,10 +22,17 @@ def main():
     download_url = "https://ci.linaro.org/jenkins/job/"
     # Device type
     device_type = os.environ.get("DEVICE_TYPE", "Undefined")
+    if device_type == "Undefined":
+        sys.exit("Device type is not defined.")
     # Hardware pack name
     hwpack_name = os.environ.get("HWPACK_NAME", "Undefined")
+    if hwpack_name == "Undefined":
+        sys.exit("Hardware pack is not defined.")
     # Rootfs type
     rootfs_type = os.getenv("ROOTFS_TYPE", "nano")
+    # Rootfs job name
+    rootfs_job_name = job_name.rsplit("-",2)
+    rootfs_job_name = "%s-%s" % (rootfs_job_name[0], rootfs_type)
     # Bundle stream name
     bundle_stream_name = os.environ.get("BUNDLE_STREAM_NAME", "/anonymous/fabo/")
     # LAVA user
@@ -38,18 +46,18 @@ def main():
     if lava_server_root.endswith("/RPC2"):
         lava_server_root = lava_server_root[:-len("/RPC2")]
 
-    rootfs_build = eval(urllib2.urlopen("%s%s" % (download_url, "precise-armhf-nano/lastSuccessfulBuild/buildNumber")).read())
+    rootfs_build = eval(urllib2.urlopen("%s%s%s" % (download_url, rootfs_job_name, "/lastSuccessfulBuild/buildNumber")).read())
 
     actions = [{
         "command": "deploy_linaro_image",
         "parameters": {
                 "hwpack": "%s%s%s" % (build_url, "artifact/", hwpack_name) ,
-                "rootfs": "%s%s" % (download_url, "precise-armhf-nano/lastSuccessfulBuild/artifact/binary-tar.tar.gz")
+                "rootfs": "%s%s%s" % (download_url, rootfs_job_name, "/lastSuccessfulBuild/artifact/binary-tar.tar.gz")
         },
         "metadata": {
                 "hwpack.type": "%s" % job_name,
                 "hwpack.build": "%s" % build_number,
-                "rootfs.type": "precise-armhf-nano",
+                "rootfs.type": "%s" % rootfs_job_name,
                 "rootfs.build": "%s" % rootfs_build
         }
     },
