@@ -36,9 +36,17 @@ def main():
     # Bundle stream name
     bundle_stream_name = os.environ.get("BUNDLE_STREAM_NAME", "/anonymous/fabo/")
     # LAVA user
-    lava_user = os.environ.get("LAVA_USER", "ciadmin")
+    lava_user = os.environ.get("LAVA_USER")
+    if lava_user == None:
+        f = open('/var/run/lava/lava-user')
+        lava_user = f.read().strip()
+        f.close()
     # LAVA token
     lava_token = os.environ.get("LAVA_TOKEN")
+    if lava_token == None:
+        f = open('/var/run/lava/lava-token')
+        lava_token = f.read().strip()
+        f.close()
     # LAVA server URL
     lava_server = os.environ.get("LAVA_SERVER", "validation.linaro.org/lava-server/RPC2/")
     # LAVA server base URL
@@ -80,9 +88,8 @@ def main():
 
     print config
 
-    server = xmlrpclib.ServerProxy("https://{lava_user:>s}@{lava_server:>s}".format(lava_user=lava_user, lava_server=lava_server))
-    server_token = xmlrpclib.ServerProxy("https://{lava_user:>s}:{lava_token:>s}@{lava_server:>s}".format(lava_user=lava_user, lava_token=lava_token, lava_server=lava_server))
-    lava_job_id = "XXXXX" # server.scheduler.submit_job(config)
+    server = xmlrpclib.ServerProxy("https://{lava_user:>s}:{lava_token:>s}@{lava_server:>s}".format(lava_user=lava_user, lava_token=lava_token, lava_server=lava_server))
+    lava_job_id = server.scheduler.submit_job(config)
 
     print "LAVA Job Id: %s, URL: http://%s/scheduler/job/%s" % (lava_job_id, lava_server_root, lava_job_id)
 
