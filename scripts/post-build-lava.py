@@ -60,7 +60,7 @@ def main():
         "command": "deploy_linaro_image",
         "parameters": {
                 "hwpack": "%s%s%s" % (build_url, "artifact/", hwpack_name) ,
-                "rootfs": "%s%s%s" % (download_url, rootfs_job_name, "/lastSuccessfulBuild/artifact/binary-tar.tar.gz")
+                "rootfs": "%s%s%s%s%s" % (download_url, rootfs_job_name, "/", rootfs_build, "/artifact/binary-tar.tar.gz")
         },
         "metadata": {
                 "hwpack.type": "%s" % job_name,
