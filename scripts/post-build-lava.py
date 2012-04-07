@@ -88,14 +88,16 @@ def main():
 
     print config
 
-    server = xmlrpclib.ServerProxy("https://{lava_user:>s}:{lava_token:>s}@{lava_server:>s}".format(lava_user=lava_user, lava_token=lava_token, lava_server=lava_server))
-    lava_job_id = server.scheduler.submit_job(config)
-
-    print "LAVA Job Id: %s, URL: http://%s/scheduler/job/%s" % (lava_job_id, lava_server_root, lava_job_id)
-
-    json.dump({'lava_url': "http://" + lava_server_root,
-               'job_id': lava_job_id},
-               open('lava-job-info', 'w'))
+    skip_lava = os.environ.get("SKIP_LAVA")
+    if skip_lava == None:
+        server = xmlrpclib.ServerProxy("https://{lava_user:>s}:{lava_token:>s}@{lava_server:>s}".format(lava_user=lava_user, lava_token=lava_token, lava_server=lava_server))
+        lava_job_id = server.scheduler.submit_job(config)
+        print "LAVA Job Id: %s, URL: http://%s/scheduler/job/%s" % (lava_job_id, lava_server_root, lava_job_id)
+        json.dump({'lava_url': "http://" + lava_server_root,
+                   'job_id': lava_job_id},
+                   open('lava-job-info', 'w'))
+    else:
+        print "Skip LAVA job submission"
 
 if __name__ == "__main__":
         main()
