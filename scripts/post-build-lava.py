@@ -9,17 +9,17 @@ import urllib2
 def main():
     """Script entry point: return some JSON based on calling args.
     We should be called from Jenkins and expect the following to 
-    be defined: $BUILD_NUMBER $JOB_NAME $BUILD_URL DEVICE
+    be defined: $BUILD_NUMBER $JOB_NAME DEVICE
     """
 
     # The current build number, defined by Jenkins
     build_number = os.environ.get("BUILD_NUMBER")
     # Name of the project of this build, defined by Jenkins
     job_name = os.environ.get("JOB_NAME")
-    # Full URL of this job, defined by Jenkins
-    build_url = os.environ.get("BUILD_URL")
-    # Download base URL, this may differ from build URL
-    download_url = "https://ci.linaro.org/jenkins/job/"
+    # CI base URL
+    ci_url = "https://ci.linaro.org/jenkins/job/"
+    # Snapshots base URL
+    snapshots_url = "http://snapshots.linaro.org"
     # Device type
     device_type = os.environ.get("DEVICE_TYPE", "Undefined")
     if device_type == "Undefined":
@@ -33,6 +33,9 @@ def main():
     # Rootfs job name
     rootfs_job_name = job_name.rsplit("-",2)
     rootfs_job_name = "%s-%s" % (rootfs_job_name[0], rootfs_type)
+    # Distribution
+    distribution = job_name.split("-",2)
+    distribution = distribution[0]
     # Bundle stream name
     bundle_stream_name = os.environ.get("BUNDLE_STREAM_NAME", "/anonymous/fabo/")
     # LAVA user
@@ -54,19 +57,25 @@ def main():
     if lava_server_root.endswith("/RPC2"):
         lava_server_root = lava_server_root[:-len("/RPC2")]
 
-    rootfs_build = eval(urllib2.urlopen("%s%s%s" % (download_url, rootfs_job_name, "/lastSuccessfulBuild/buildNumber")).read())
+    rootfs_build_number = eval(urllib2.urlopen("%s%s%s" % (ci_url, rootfs_job_name, "/lastSuccessfulBuild/buildNumber")).read())
+    rootfs_build_timestamp = eval(urllib2.urlopen("%s%s%s" % (ci_url, rootfs_job_name, "/lastSuccessfulBuild/buildTimestamp?format=yyyyMMdd")).read())
+    rootfs_name = "linaro-%s-%s-%s-%s.tar.gz" % (distribution, rootfs_type, rootfs_build_timestamp, rootfs_build_number)
+
+    # Convert CI URLs to snapshots URLs
+    hwpack_url = "%s/%s/%s/%s/%s" % (snapshots_url, distribution, "hwpacks", build_number, hwpack_name)
+    rootfs_url = "%s/%s/%s/%s/%s" % (snapshots_url, distribution, "images", rootfs_build_number, rootfs_name)
 
     actions = [{
         "command": "deploy_linaro_image",
         "parameters": {
-                "hwpack": "%s%s%s" % (build_url, "artifact/", hwpack_name) ,
-                "rootfs": "%s%s%s%s%s" % (download_url, rootfs_job_name, "/", rootfs_build, "/artifact/binary-tar.tar.gz")
+                "hwpack": "%s" % hwpack_url,
+                "rootfs": "%s" % rootfs_url
         },
         "metadata": {
                 "hwpack.type": "%s" % job_name,
                 "hwpack.build": "%s" % build_number,
                 "rootfs.type": "%s" % rootfs_job_name,
-                "rootfs.build": "%s" % rootfs_build
+                "rootfs.build": "%s" % rootfs_build_number
         }
     },
     {
