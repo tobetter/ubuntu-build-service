@@ -34,8 +34,8 @@ def main():
     rootfs_job_name = job_name.rsplit("-",2)
     rootfs_job_name = "%s-%s" % (rootfs_job_name[0], rootfs_type)
     # Distribution
-    distribution = job_name.split("-",2)
-    distribution = distribution[0]
+    job_name_split = job_name.split("-",2)
+    (distribution, hwpack_type) = job_name_split[0], job_name_split[2]
     # Bundle stream name
     bundle_stream_name = os.environ.get("BUNDLE_STREAM_NAME", "/anonymous/fabo/")
     # LAVA user
@@ -57,13 +57,41 @@ def main():
     if lava_server_root.endswith("/RPC2"):
         lava_server_root = lava_server_root[:-len("/RPC2")]
 
-    rootfs_build_number = eval(urllib2.urlopen("%s%s%s" % (ci_url, rootfs_job_name, "/lastSuccessfulBuild/buildNumber")).read())
-    rootfs_build_timestamp = eval(urllib2.urlopen("%s%s%s" % (ci_url, rootfs_job_name, "/lastSuccessfulBuild/buildTimestamp?format=yyyyMMdd")).read())
+    request = urllib2.Request("%s%s%s" % (ci_url, rootfs_job_name, "/lastSuccessfulBuild/buildNumber"))
+    try:
+        response = urllib2.urlopen(request)
+    except URLError, e:
+        print 'Attempt to get last successful build number.'
+        if hasattr(e, 'reason'):
+            print 'Failed to reach the server.'
+            print 'Reason: ', e.reason
+        elif hasattr(e, 'code'):
+            print 'The server couldn\'t fulfill the request.'
+            print 'Error code: ', e.code
+        sys.exit(1)
+    else:
+        rootfs_build_number = eval(response.read())
+
+    request = urllib2.Request("%s%s%s" % (ci_url, rootfs_job_name, "/lastSuccessfulBuild/buildTimestamp?format=yyyyMMdd"))
+    try:
+        response = urllib2.urlopen(request)
+    except URLError, e:
+        print 'Attempt to get last successful build timestamp.'
+        if hasattr(e, 'reason'):
+            print 'Failed to reach the server.'
+            print 'Reason: ', e.reason
+        elif hasattr(e, 'code'):
+            print 'The server couldn\'t fulfill the request.'
+            print 'Error code: ', e.code
+        sys.exit(1)
+    else:
+        rootfs_build_timestamp = eval(response.read())
+
     rootfs_name = "linaro-%s-%s-%s-%s.tar.gz" % (distribution, rootfs_type, rootfs_build_timestamp, rootfs_build_number)
 
     # Convert CI URLs to snapshots URLs
-    hwpack_url = "%s/%s/%s/%s/%s" % (snapshots_url, distribution, "hwpacks", build_number, hwpack_name)
-    rootfs_url = "%s/%s/%s/%s/%s" % (snapshots_url, distribution, "images", rootfs_build_number, rootfs_name)
+    hwpack_url = "%s/%s/%s/%s/%s/%s" % (snapshots_url, distribution, "hwpacks", hwpack_type, build_number, hwpack_name)
+    rootfs_url = "%s/%s/%s/%s/%s/%s" % (snapshots_url, distribution, "images", rootfs_type, rootfs_build_number, rootfs_name)
 
     actions = [{
         "command": "deploy_linaro_image",
@@ -72,10 +100,11 @@ def main():
                 "rootfs": "%s" % rootfs_url
         },
         "metadata": {
-                "hwpack.type": "%s" % job_name,
+                "hwpack.type": "%s" % hwpack_type,
                 "hwpack.build": "%s" % build_number,
-                "rootfs.type": "%s" % rootfs_job_name,
-                "rootfs.build": "%s" % rootfs_build_number
+                "rootfs.type": "%s" % rootfs_type,
+                "rootfs.build": "%s" % rootfs_build_number,
+                "distribution": "%s" % distribution
         }
     },
     {
@@ -106,7 +135,7 @@ def main():
                    'job_id': lava_job_id},
                    open('lava-job-info', 'w'))
     else:
-        print "Skip LAVA job submission"
+        print "LAVA job submission skipped."
 
 if __name__ == "__main__":
         main()
