@@ -8,34 +8,34 @@ import urllib2
 
 def main():
     """Script entry point: return some JSON based on calling args.
-    We should be called from Jenkins and expect the following to 
-    be defined: $BUILD_NUMBER $JOB_NAME DEVICE
+    We should be called from Jenkins and expect the following to be defined:
+    $HWPACK_BUILD_NUMBER $HWPACK_JOB_NAME HWPACK_FILE_NAME $DEVICE_TYPE
     """
 
-    # The current build number, defined by Jenkins
-    build_number = os.environ.get("BUILD_NUMBER")
-    # Name of the project of this build, defined by Jenkins
-    job_name = os.environ.get("JOB_NAME")
     # CI base URL
-    ci_url = "https://ci.linaro.org/jenkins/job/"
+    ci_base_url = "https://ci.linaro.org/jenkins/job/"
     # Snapshots base URL
     snapshots_url = "http://snapshots.linaro.org"
+
+    # Name of the hardware pack project
+    hwpack_job_name = os.environ.get("HWPACK_JOB_NAME")
+    # The hardware pack build number
+    hwpack_build_number = os.environ.get("HWPACK_BUILD_NUMBER")
+    # Hardware pack file name
+    hwpack_file_name = os.environ.get("HWPACK_FILE_NAME", "Undefined")
+    if hwpack_file_name == "Undefined":
+        sys.exit("Hardware pack is not defined.")
     # Device type
     device_type = os.environ.get("DEVICE_TYPE", "Undefined")
     if device_type == "Undefined":
         sys.exit("Device type is not defined.")
-    # Hardware pack name
-    hwpack_name = os.environ.get("HWPACK_NAME", "Undefined")
-    if hwpack_name == "Undefined":
-        sys.exit("Hardware pack is not defined.")
-    # Rootfs type
+
+    # Distribution, architecture and hardware pack type
+    ret_split = hwpack_job_name.split("-",2)
+    (distribution, architecture, hwpack_type) = ret_split[0], ret_split[1], ret_split[2]
+    # Rootfs type, default is nano
     rootfs_type = os.getenv("ROOTFS_TYPE", "nano")
-    # Rootfs job name
-    rootfs_job_name = job_name.rsplit("-",2)
-    rootfs_job_name = "%s-%s" % (rootfs_job_name[0], rootfs_type)
-    # Distribution
-    job_name_split = job_name.split("-",2)
-    (distribution, hwpack_type) = job_name_split[0], job_name_split[2]
+
     # Bundle stream name
     bundle_stream_name = os.environ.get("BUNDLE_STREAM_NAME", "/anonymous/fabo/")
     # LAVA user
@@ -57,41 +57,41 @@ def main():
     if lava_server_root.endswith("/RPC2"):
         lava_server_root = lava_server_root[:-len("/RPC2")]
 
-    request = urllib2.Request("%s%s%s" % (ci_url, rootfs_job_name, "/lastSuccessfulBuild/buildNumber"))
+    ci_url = "%s%s-%s-%s%s" % (ci_base_url, distribution, architecture, rootfs_type, "/lastSuccessfulBuild/buildNumber")
+    request = urllib2.Request(ci_url)
     try:
         response = urllib2.urlopen(request)
-    except URLError, e:
-        print 'Attempt to get last successful build number.'
+    except urllib2.URLError, e:
         if hasattr(e, 'reason'):
-            print 'Failed to reach the server.'
+            print 'Failed to reach %s.' % ci_url
             print 'Reason: ', e.reason
         elif hasattr(e, 'code'):
-            print 'The server couldn\'t fulfill the request.'
+            print 'ci.linaro.org could not fulfill the request.'
             print 'Error code: ', e.code
-        sys.exit(1)
+        sys.exit("Failed to get last successful rootfs build number.")
     else:
         rootfs_build_number = eval(response.read())
 
-    request = urllib2.Request("%s%s%s" % (ci_url, rootfs_job_name, "/lastSuccessfulBuild/buildTimestamp?format=yyyyMMdd"))
+    ci_url = "%s%s-%s-%s%s" % (ci_base_url, distribution, architecture, rootfs_type, "/lastSuccessfulBuild/buildTimestamp?format=yyyyMMdd")
+    request = urllib2.Request(ci_url)
     try:
         response = urllib2.urlopen(request)
-    except URLError, e:
-        print 'Attempt to get last successful build timestamp.'
+    except urllib2.URLError, e:
         if hasattr(e, 'reason'):
-            print 'Failed to reach the server.'
+            print 'Failed to reach %s.' % ci_url
             print 'Reason: ', e.reason
         elif hasattr(e, 'code'):
-            print 'The server couldn\'t fulfill the request.'
+            print 'ci.linaro.org could not fulfill the request.'
             print 'Error code: ', e.code
-        sys.exit(1)
+        sys.exit("Failed to get last successful rootfs build timestamp.")
     else:
         rootfs_build_timestamp = eval(response.read())
 
-    rootfs_name = "linaro-%s-%s-%s-%s.tar.gz" % (distribution, rootfs_type, rootfs_build_timestamp, rootfs_build_number)
+    rootfs_file_name = "linaro-%s-%s-%s-%s.tar.gz" % (distribution, rootfs_type, rootfs_build_timestamp, rootfs_build_number)
 
     # Convert CI URLs to snapshots URLs
-    hwpack_url = "%s/%s/%s/%s/%s/%s" % (snapshots_url, distribution, "hwpacks", hwpack_type, build_number, hwpack_name)
-    rootfs_url = "%s/%s/%s/%s/%s/%s" % (snapshots_url, distribution, "images", rootfs_type, rootfs_build_number, rootfs_name)
+    hwpack_url = "%s/%s/%s/%s/%s/%s" % (snapshots_url, distribution, "hwpacks", hwpack_type, hwpack_build_number, hwpack_file_name)
+    rootfs_url = "%s/%s/%s/%s/%s/%s" % (snapshots_url, distribution, "images", rootfs_type, rootfs_build_number, rootfs_file_name)
 
     actions = [{
         "command": "deploy_linaro_image",
@@ -101,7 +101,7 @@ def main():
         },
         "metadata": {
                 "hwpack.type": "%s" % hwpack_type,
-                "hwpack.build": "%s" % build_number,
+                "hwpack.build": "%s" % hwpack_build_number,
                 "rootfs.type": "%s" % rootfs_type,
                 "rootfs.build": "%s" % rootfs_build_number,
                 "distribution": "%s" % distribution
@@ -120,7 +120,7 @@ def main():
 
     config = json.dumps({"timeout": 18000,
                          "actions": actions,
-                         "job_name": "%s%s" % ("CI - ", job_name),
+                         "job_name": "%s%s/%s/" % (ci_base_url, hwpack_job_name, hwpack_build_number),
                          "device_type": device_type,
                         }, indent=2)
 
