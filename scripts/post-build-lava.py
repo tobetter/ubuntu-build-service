@@ -1,10 +1,14 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 
 import os
 import sys
 import json
 import xmlrpclib
 import urllib2
+import re
+
+def obfuscate_credentials(s):
+    return re.sub(r"([^ ]:).+?(@)", r"\1xxx\2", s)
 
 def main():
     """Script entry point: return some JSON based on calling args.
@@ -128,8 +132,13 @@ def main():
 
     skip_lava = os.environ.get("SKIP_LAVA")
     if skip_lava == None:
-        server = xmlrpclib.ServerProxy("https://{lava_user:>s}:{lava_token:>s}@{lava_server:>s}".format(lava_user=lava_user, lava_token=lava_token, lava_server=lava_server))
-        lava_job_id = server.scheduler.submit_job(config)
+        try:
+            server = xmlrpclib.ServerProxy("https://{lava_user:>s}:{lava_token:>s}@{lava_server:>s}".format(lava_user=lava_user, lava_token=lava_token, lava_server=lava_server))
+            lava_job_id = server.scheduler.submit_job(config)
+        except xmlrpclib.ProtocolError, e:
+            print "Error making a LAVA request:", obfuscate_credentials(str(e))
+            sys.exit(1)
+
         print "LAVA Job Id: %s, URL: http://%s/scheduler/job/%s" % (lava_job_id, lava_server_root, lava_job_id)
         json.dump({'lava_url': "http://" + lava_server_root,
                    'job_id': lava_job_id},
