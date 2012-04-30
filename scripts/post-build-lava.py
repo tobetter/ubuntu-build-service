@@ -73,8 +73,8 @@ def main():
             print 'ci.linaro.org could not fulfill the request.'
             print 'Error code: ', e.code
         sys.exit("Failed to get last successful rootfs build number.")
-    else:
-        rootfs_build_number = eval(response.read())
+
+    rootfs_build_number = eval(response.read())
 
     ci_url = "%s%s-%s-%s%s" % (ci_base_url, distribution, architecture, rootfs_type, "/lastSuccessfulBuild/buildTimestamp?format=yyyyMMdd")
     request = urllib2.Request(ci_url)
@@ -88,8 +88,8 @@ def main():
             print 'ci.linaro.org could not fulfill the request.'
             print 'Error code: ', e.code
         sys.exit("Failed to get last successful rootfs build timestamp.")
-    else:
-        rootfs_build_timestamp = eval(response.read())
+
+    rootfs_build_timestamp = eval(response.read())
 
     rootfs_file_name = "linaro-%s-%s-%s-%s.tar.gz" % (distribution, rootfs_type, rootfs_build_timestamp, rootfs_build_number)
 
