@@ -1,0 +1,7 @@
+#!/bin/sh  
+
+cd binary/boot/filesystem.dir
+
+echo "I: rm /etc/X11 and /etc/firefox"
+rm -rf ./etc/X11
+rm -rf ./etc/firefox
