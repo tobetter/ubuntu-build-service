@@ -41,7 +41,7 @@ def main():
     rootfs_type = os.getenv("ROOTFS_TYPE", "nano")
 
     # Bundle stream name
-    bundle_stream_name = os.environ.get("BUNDLE_STREAM_NAME", "/anonymous/fabo/")
+    bundle_stream_name = os.environ.get("BUNDLE_STREAM_NAME", "/private/team/linaro/developers-and-community-builds/")
     # LAVA user
     lava_user = os.environ.get("LAVA_USER")
     if lava_user == None:
