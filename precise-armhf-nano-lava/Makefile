@@ -7,7 +7,7 @@
 
 # You need live-build package installed and superuser privileges.
 
-IMAGEPREFIX=linaro-precise-nano-`date +%Y%m%d`-$(BUILD_NUMBER)
+IMAGEPREFIX=linaro-precise-nano-lava-`date +%Y%m%d`-$(BUILD_NUMBER)
 LOGFILE=$(IMAGEPREFIX).build-log.txt
 CONFIGFILE=$(IMAGEPREFIX).config.tar.gz
 LISTFILE=$(IMAGEPREFIX).list
