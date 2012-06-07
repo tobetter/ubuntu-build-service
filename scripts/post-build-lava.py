@@ -37,8 +37,8 @@ def main():
     # Distribution, architecture and hardware pack type
     ret_split = hwpack_job_name.split("-",2)
     (distribution, architecture, hwpack_type) = ret_split[0], ret_split[1], ret_split[2]
-    # Rootfs type, default is nano
-    rootfs_type = os.getenv("ROOTFS_TYPE", "nano")
+    # Rootfs type, default is nano-lava
+    rootfs_type = os.getenv("ROOTFS_TYPE", "nano-lava")
 
     # Bundle stream name
     bundle_stream_name = os.environ.get("BUNDLE_STREAM_NAME", "/private/team/linaro/developers-and-community-builds/")
@@ -113,6 +113,30 @@ def main():
     },
     {
         "command": "boot_linaro_image"
+    },
+    {
+        "command": "lava_test_run",
+        "parameters": {
+            "test_name": "pwrmgmt"
+        }
+    },
+    {
+        "command": "lava_test_run",
+        "parameters": {
+            "test_name": "gatortests"
+        }
+    },
+    {
+        "command": "lava_test_run",
+        "parameters": {
+            "test_name": "perf"
+        }
+    },
+    {
+        "command": "lava_test_run",
+        "parameters": {
+            "test_name": "wifi-enablement"
+        }
     },
     {
         "command": "submit_results",
