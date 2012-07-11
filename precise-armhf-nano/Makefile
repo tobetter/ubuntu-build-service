@@ -9,7 +9,7 @@
 
 IMAGEPREFIX=linaro-precise-nano-`date +%Y%m%d`-$(BUILD_NUMBER)
 LOGFILE=$(IMAGEPREFIX).build-log.txt
-CONFIGFILE=$(IMAGEPREFIX).config.tar.gz
+CONFIGFILE=$(IMAGEPREFIX).config.tar.bz2
 LISTFILE=$(IMAGEPREFIX).list
 PKGSFILE=$(IMAGEPREFIX).packages
 TARGZFILE=$(IMAGEPREFIX).tar.gz
