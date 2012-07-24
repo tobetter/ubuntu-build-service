@@ -32,7 +32,8 @@ lb config \
  --security true \
  --system normal \
  --username linaro \
- --volatile true
+ --volatile true \
+ --apt-recommends false
 
 echo "I: copy customization"
 cp -rf customization/* config/
