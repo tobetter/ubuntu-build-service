@@ -21,11 +21,11 @@ lb config \
  --bootstrap-qemu-static /usr/bin/qemu-arm-static \
  --cache false \
  --chroot-filesystem none \
- --distribution precise \
+ --distribution quantal \
  --gzip-options '-9 --rsyncable' \
  --hostname linaro-ubuntu-desktop \
  --iso-publisher 'Linaro; http://www.linaro.org/; linaro-dev@lists.linaro.org' \
- --iso-volume 'Linaro precise $(date +%Y%m%d-%H:%M)' \
+ --iso-volume 'Linaro quantal $(date +%Y%m%d-%H:%M)' \
  --linux-flavours none \
  --linux-packages none \
  --mode ubuntu \
