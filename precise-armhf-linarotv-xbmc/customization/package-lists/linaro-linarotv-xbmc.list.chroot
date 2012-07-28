@@ -1,0 +1,17 @@
+# Packages needed for Linaro - Ubuntu Desktop
+linaro-overlay-minimal
+linaro-ubuntu-desktop
+xbmc
+usbutils
+gstreamer0.10-alsa
+gstreamer0.10-faac
+gstreamer0.10-ffmpeg
+gstreamer0.10-gnomevfs
+gstreamer0.10-plugin-ducati
+gstreamer0.10-plugins-bad
+gstreamer0.10-plugins-base
+gstreamer0.10-plugins-good
+gstreamer0.10-plugins-ugly
+gstreamer0.10-pulseaudio
+gstreamer0.10-sdl
+gstreamer0.10-x
