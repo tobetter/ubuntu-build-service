@@ -16,7 +16,7 @@ def main():
     if timestamp == 'Undefined':
         sys.exit('Timestamp is not defined.')
 
-    igloo_url = 'http://www.igloocommunity.org/download/android/ics/binaries/%s' % timestamp
+    igloo_url = 'http://www.igloocommunity.org/download/android/jb/binaries/%s' % timestamp
     md5sum_url = '%s/MD5SUM' % igloo_url
     vendor_url = '%s/vendor.tar.bz2' % igloo_url
 
