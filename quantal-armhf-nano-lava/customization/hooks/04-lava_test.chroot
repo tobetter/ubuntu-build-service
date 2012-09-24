@@ -7,7 +7,7 @@ echo "I: install extra package"
 apt-get install --yes bzr lava-test
 
 echo "I: install tests"
-nano_tests=(pwrmgmt gatortests perf wifi-enablement)
+nano_tests=(pwrmgmt gatortests perf wifi-enablement device-tree)
 for nano_test in ${nano_tests[@]}; do
     lava-test install ${nano_test}
 done
