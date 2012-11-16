@@ -29,10 +29,10 @@ lb config \
  --linux-flavours none \
  --linux-packages none \
  --mode ubuntu \
- --security true \
+ --security false \
  --system normal \
  --username linaro \
- --volatile true \
+ --volatile false \
  --apt-recommends false
 
 echo "I: copy customization"

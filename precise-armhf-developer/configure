@@ -30,10 +30,10 @@ lb config \
  --linux-packages none \
  --mode ubuntu \
  --package-lists minimal \
- --security true \
+ --security false \
  --system normal \
  --username linaro \
- --volatile true
+ --volatile false
 
 echo "I: copy customization"
 cp -rf customization/* config/
