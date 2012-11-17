@@ -16,6 +16,7 @@ lb config \
  --archive-areas 'main universe' \
  --binary-filesystem ext4 \
  --binary-images tar \
+ --bootappend-live "hostname=linaro-nano username=linaro" \
  --bootstrap-flavour minimal \
  --bootstrap-qemu-arch armhf \
  --bootstrap-qemu-static /usr/bin/qemu-arm-static \
@@ -23,7 +24,6 @@ lb config \
  --chroot-filesystem none \
  --distribution precise \
  --gzip-options '-9 --rsyncable' \
- --hostname linaro-nano \
  --iso-publisher 'Linaro; http://www.linaro.org/; linaro-dev@lists.linaro.org' \
  --iso-volume 'Linaro precise $(date +%Y%m%d-%H:%M)' \
  --linux-flavours none \
@@ -32,7 +32,6 @@ lb config \
  --package-lists minimal \
  --security false \
  --system normal \
- --username linaro \
  --volatile false
 
 echo "I: copy customization"
