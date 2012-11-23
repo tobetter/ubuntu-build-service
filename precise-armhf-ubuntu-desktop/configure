@@ -29,7 +29,7 @@ lb config \
  --iso-volume 'Linaro precise $(date +%Y%m%d-%H:%M)' \
  --linux-flavours none \
  --linux-packages none \
- --mirror-bootstrap "http://localhost/~ubuntu/"
+ --mirror-bootstrap "http://localhost/~ubuntu/" \
  --mode ubuntu \
  --security false \
  --system normal \
