@@ -26,6 +26,7 @@ def main():
         else:
             f = open(hwpack_file,"r+")
             alltext = f.read()
+            sources_entry=sources_entry.replace("sources-entry=","")
             alltext = alltext.replace(replace_string, sources_entry)
             f.seek(0)
             f.write(alltext)
