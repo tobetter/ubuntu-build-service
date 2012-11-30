@@ -18,9 +18,18 @@ def main():
         sys.exit("Hardware pack is not defined.")
     else:
         hwpack_file = os.path.join('hwpacks', hwpack)
-        f = open(hwpack_file, "a")
-        f.write(sources_entry)
-        f.close()
+        replace_string = os.environ.get("REPLACE", "Undefined")
+        if replace_string == "Undefined":
+            f = open(hwpack_file, "a")
+            f.write(sources_entry)
+            f.close()
+        else:
+            f = open(hwpack_file,"r+")
+            alltext = f.read()
+            alltext = alltext.replace(replace_string, sources_entry)
+            f.seek(0)
+            f.write(alltext)
+            f.close()
 
 if __name__ == "__main__":
         main()
