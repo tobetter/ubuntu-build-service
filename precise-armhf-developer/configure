@@ -18,11 +18,12 @@ lb config \
  --binary-filesystem ext4 \
  --binary-images tar \
  --bootappend-live "hostname=linaro-developer username=linaro" \
- --bootstrap-flavour minimal \
  --bootstrap-qemu-arch armhf \
  --bootstrap-qemu-static /usr/bin/qemu-arm-static \
  --cache false \
  --chroot-filesystem none \
+ --compression gzip \
+ --debootstrap-options "--variant=minbase" \
  --distribution precise \
  --gzip-options '-9 --rsyncable' \
  --iso-publisher 'Linaro; http://www.linaro.org/; linaro-dev@lists.linaro.org' \
@@ -31,10 +32,9 @@ lb config \
  --linux-packages none \
  --mirror-bootstrap "http://localhost/~ubuntu/" \
  --mode ubuntu \
- --package-lists minimal \
  --security false \
  --system normal \
- --volatile false
+ --updates false
 
 echo "I: copy customization"
 cp -rf customization/* config/

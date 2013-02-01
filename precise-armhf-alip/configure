@@ -23,6 +23,7 @@ lb config \
  --bootstrap-qemu-static /usr/bin/qemu-arm-static \
  --cache false \
  --chroot-filesystem none \
+ --compression gzip \
  --distribution precise \
  --gzip-options '-9 --rsyncable' \
  --iso-publisher 'Linaro; http://www.linaro.org/; linaro-dev@lists.linaro.org' \
@@ -33,7 +34,7 @@ lb config \
  --mode ubuntu \
  --security false \
  --system normal \
- --volatile false \
+ --updates false \
  --apt-recommends false
 
 echo "I: copy customization"
