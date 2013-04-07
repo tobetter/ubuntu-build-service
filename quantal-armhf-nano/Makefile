@@ -7,7 +7,7 @@
 
 # You need live-build package installed and superuser privileges.
 
-IMAGEPREFIX=linaro-quantal-nano-`date +%Y%m%d`-$(BUILD_NUMBER)
+IMAGEPREFIX=odroid-quantal-nano-`date +%Y%m%d`-$(BUILD_NUMBER)
 LOGFILE=$(IMAGEPREFIX).build-log.txt
 CONFIGFILE=$(IMAGEPREFIX).config.tar.bz2
 LISTFILE=$(IMAGEPREFIX).contents
