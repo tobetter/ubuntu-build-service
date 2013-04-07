@@ -7,7 +7,10 @@
 
 # You need live-build package installed and superuser privileges.
 
-IMAGEPREFIX=odroid-precise-nano-lava-`date +%Y%m%d`-$(BUILD_NUMBER)
+IMAGEPREFIX=odroid-precise-nano-lava-`date +%Y%m%d`
+ifneq ($(BUILD_NUMBER),)
+	IMAGEPREFIX:=$(IMAGEPREFIX)-$(BUILD_NUMBER)
+endif
 LOGFILE=$(IMAGEPREFIX).build-log.txt
 CONFIGFILE=$(IMAGEPREFIX).config.tar.bz2
 LISTFILE=$(IMAGEPREFIX).contents
