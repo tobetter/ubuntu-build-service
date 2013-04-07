@@ -1,4 +1,4 @@
-#!/bin/sh  
+#!/bin/sh
 
 echo "I: create odroid user"
 adduser --gecos odroid --disabled-login odroid
