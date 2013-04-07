@@ -1,0 +1,15 @@
+Ubuntu Build Service
+
+This repository contains the configurations and necessary fixes to build
+Ubuntu distribution image, and cloned from Linaro's Ubuntu Build Service
+repostory in order to customize for ODROID. Please see the link below to see
+the original files.
+
+https://git.linaro.org/gitweb?p=ci/ubuntu-build-service.git;a=summary
+
+There are various distributions leaded by Linaro and each distribution can be
+built by simple command on its directory.
+
+  $ cd <project directory>
+  $ ./configure
+  $ make
