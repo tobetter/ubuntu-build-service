@@ -17,7 +17,7 @@ lb config \
  --archive-areas 'main universe' \
  --binary-filesystem ext4 \
  --binary-images tar \
- --bootappend-live "hostname=linaro-alip username=linaro" \
+ --bootappend-live "hostname=odroid-alip username=odroid" \
  --bootstrap-qemu-arch armhf \
  --bootstrap-qemu-static /usr/bin/qemu-arm-static \
  --cache false \
@@ -25,11 +25,11 @@ lb config \
  --compression gzip \
  --distribution quantal \
  --gzip-options '-9 --rsyncable' \
- --iso-publisher 'Linaro; http://www.linaro.org/; linaro-dev@lists.linaro.org' \
- --iso-volume 'Linaro quantal $(date +%Y%m%d-%H:%M)' \
+ --iso-publisher 'ODROID; http://www.hardkernel.com/; tobetter@gmail.com' \
+ --iso-volume 'ODROID quantal $(date +%Y%m%d-%H:%M)' \
  --linux-flavours none \
  --linux-packages none \
- --mirror-bootstrap "http://localhost/~ubuntu/quantal" \
+ --mirror-bootstrap "http://ports.ubuntu.com" \
  --mode ubuntu \
  --security false \
  --system normal \

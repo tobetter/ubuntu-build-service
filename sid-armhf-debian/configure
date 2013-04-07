@@ -24,14 +24,14 @@ lb config \
  --debian-installer-gui false \
  --distribution sid \
  --gzip-options '--best --rsyncable' \
- --hostname linaro \
+ --hostname odroid \
  --initramfs none \
  --linux-flavours none \
  --linux-packages none \
  --mode debian \
  --parent-debian-installer-distribution sid \
  --parent-distribution sid \
- --username linaro
+ --username odroid
 
 echo "I: copy customization"
 #cp -rf customization/* config/
