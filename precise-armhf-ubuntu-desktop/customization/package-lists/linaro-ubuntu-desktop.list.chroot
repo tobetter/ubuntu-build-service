@@ -1,3 +1,5 @@
-# Packages needed for Linaro - Ubuntu Desktop
+# Packages needed for ODORID - Ubuntu Desktop
 linaro-overlay-minimal
 linaro-ubuntu-desktop
+lubuntu-desktop
+xubuntu-desktop
