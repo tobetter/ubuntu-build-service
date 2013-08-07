@@ -18,7 +18,6 @@ lb config \
  --binary-filesystem ext4 \
  --binary-images tar \
  --bootappend-live "hostname=linaro-ubuntu-desktop username=linaro" \
- --bootstrap-flavour standard \
  --bootstrap-qemu-arch armhf \
  --bootstrap-qemu-static /usr/bin/qemu-arm-static \
  --cache false \
