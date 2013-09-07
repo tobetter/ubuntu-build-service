@@ -23,7 +23,7 @@ all:
 		sudo mv binary.contents $(LISTFILE); \
 		sudo mv binary.packages $(PKGSFILE); \
 		sudo mv binary.img $(IMAGEPREFIX).img; \
-		gzip -9 --rsyncable $(IMAGEPREFIX).img
+		gzip -9 --rsyncable $(IMAGEPREFIX).img; \
 		md5sum $(LOGFILE) $(CONFIGFILE) $(LISTFILE) $(PKGSFILE) $(GZFILE) > $(MD5SUMSFILE); \
 		sha1sum $(LOGFILE) $(CONFIGFILE) $(LISTFILE) $(PKGSFILE) $(GZFILE) > $(SHA1SUMSFILE); \
 	fi
