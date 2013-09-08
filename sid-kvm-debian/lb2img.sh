@@ -49,14 +49,7 @@ mount ${DEVICE} ${MOUNTDIR}
 tar -zxf ${TARGZFILE} -C ${MOUNTDIR} --strip-components=1
 
 echo "I: Install grub bootloader"
-${GRUBINSTALL} \
-  --modules="part_msdos" \
-  --boot-directory=${MOUNTDIR}/boot \
-  --target=i386-pc \
-  --directory=/usr/lib/grub/i386-pc \
-  --force \
-  --disk-module=biosdisk \
-  ${DEVICE}
+${GRUBINSTALL} --boot-directory=${MOUNTDIR}/boot --force ${DEVICE}
 
 echo "I: Create grub configuration file"
 VMLINUZ=`find ${MOUNTDIR}/boot -type f -name 'vmlinuz-*' |xargs basename`
@@ -77,7 +70,7 @@ menuentry 'linux' {
 EOF
 
 umount ${MOUNTDIR}
-rm -rf ${MOUNTDIR} ${MOUNTDIR}/boot/grub/device.map
+rm -rf ${MOUNTDIR}
 losetup -d ${DEVICE}
 
 echo "I: Done"
