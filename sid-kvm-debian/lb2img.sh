@@ -6,7 +6,8 @@
 
 PROGNAME=`basename $0`
 DEVICE=${DEVICE:-/dev/loop0}
-IMAGE=${IMAGE:-kvm.img}
+TARGZFILE=${TARGZFILE:-binary-tar.tar.gz}
+IMGFILE=${IMGFILE:-kvm.img}
 
 # we must be root
 [ `whoami` = "root" ] || { echo "E: You must be root" && exit 1; }
@@ -16,8 +17,8 @@ MKFS=`which mkfs.ext4` || { echo "E: You must have mkfs.ext3" && exit 1; }
 TUNE2FS=`which tune2fs` || { echo "E: You must have tune2fs" && exit 1; }
 QEMUIMG=`which qemu-img` || { echo "E: You must have qemu-img" && exit 1; }
 
-${QEMUIMG} create -f raw ${IMAGE} 1G
-losetup ${DEVICE} ${IMAGE}
+${QEMUIMG} create -f raw ${IMGFILE} 1G
+losetup ${DEVICE} ${IMGFILE}
 
 echo "I: Create filesystem"
 ${MKFS} -O ^has_journal ${DEVICE}
@@ -29,7 +30,7 @@ echo "I: Mount device on local filesystem"
 MOUNTDIR=$(mktemp -d /tmp/${PROGNAME}.XXXXXX)
 mount ${DEVICE} ${MOUNTDIR}
 
-tar -zxf binary-tar.tar.gz -C ${MOUNTDIR} --strip-components=1
+tar -zxf ${TARGZFILE} -C ${MOUNTDIR} --strip-components=1
 
 echo "I: Install grub bootloader"
 echo "(hd0) ${DEVICE}" > device.map
