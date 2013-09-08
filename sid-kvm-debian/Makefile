@@ -12,20 +12,19 @@ LOGFILE=$(IMAGEPREFIX).build-log.txt
 CONFIGFILE=$(IMAGEPREFIX).config.tar.bz2
 LISTFILE=$(IMAGEPREFIX).contents
 PKGSFILE=$(IMAGEPREFIX).packages
-GZFILE=$(IMAGEPREFIX).img.gz
+TARGZFILE=$(IMAGEPREFIX).tar.gz
 MD5SUMSFILE=$(IMAGEPREFIX).md5sums.txt
 SHA1SUMSFILE=$(IMAGEPREFIX).sha1sums.txt
 
 all:
 	set -e; sudo lb build 2>&1 | tee $(LOGFILE)
-	if [ -f binary.img ]; then \
+	if [ -f binary-tar.tar.gz ]; then \
 		tar -jcf $(CONFIGFILE) auto/ config/ configure; \
 		sudo mv binary.contents $(LISTFILE); \
 		sudo mv binary.packages $(PKGSFILE); \
-		sudo mv binary.img $(IMAGEPREFIX).img; \
-		gzip -9 --rsyncable $(IMAGEPREFIX).img; \
-		md5sum $(LOGFILE) $(CONFIGFILE) $(LISTFILE) $(PKGSFILE) $(GZFILE) > $(MD5SUMSFILE); \
-		sha1sum $(LOGFILE) $(CONFIGFILE) $(LISTFILE) $(PKGSFILE) $(GZFILE) > $(SHA1SUMSFILE); \
+		sudo mv binary-tar.tar.gz $(TARGZFILE); \
+		md5sum $(LOGFILE) $(CONFIGFILE) $(LISTFILE) $(PKGSFILE) $(TARGZFILE) > $(MD5SUMSFILE); \
+		sha1sum $(LOGFILE) $(CONFIGFILE) $(LISTFILE) $(PKGSFILE) $(TARGZFILE) > $(SHA1SUMSFILE); \
 	fi
 
 clean:

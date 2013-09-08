@@ -16,9 +16,12 @@ lb config \
  --apt-secure false \
  --architectures amd64 \
  --archive-areas 'main contrib non-free' \
- --binary-images hdd \
- --bootappend-live "boot=live config quiet hostname=linaro-sid username=linaro" \
+ --binary-filesystem ext4 \
+ --binary-images tar \
+ --bootloader grub \
+ --bootappend-live "quiet hostname=linaro-sid username=linaro" \
  --cache false \
+ --chroot-filesystem none \
  --compression gzip \
  --debootstrap-options "--variant=minbase" \
  --distribution sid \
@@ -29,7 +32,7 @@ lb config \
  --memtest none \
  --mode debian \
  --security false \
- --system live \
+ --system normal \
  --updates false
 
 echo "I: copy customization"
