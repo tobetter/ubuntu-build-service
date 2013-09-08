@@ -5,9 +5,24 @@
 # Convert live-build tarball to KVM image
 
 PROGNAME=`basename $0`
-DEVICE=${DEVICE:-/dev/loop0}
-TARGZFILE=${TARGZFILE:-binary-tar.tar.gz}
-IMGFILE=${IMGFILE:-kvm.img}
+DEVICE=
+TARGZFILE=
+IMGFILE=
+
+usage() {
+        echo "usage: ${PROGNAME} <device> <targzfile> <imgfile>"
+        echo "e.g. ${PROGNAME} ${DEVICE} ${TARGZFILE} ${IMGFILE}"
+        exit 1
+}
+
+DEVICE=$1
+TARGZFILE=$2
+IMGFILE=$3
+
+# we must provide device name
+[ -n "${DEVICE}" ] || usage
+[ -n "${TARGZFILE}" ] || usage
+[ -n "${IMGFILE}" ] || usage
 
 # we must be root
 [ `whoami` = "root" ] || { echo "E: You must be root" && exit 1; }
