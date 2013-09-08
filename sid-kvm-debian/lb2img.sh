@@ -32,7 +32,7 @@ MKFS=`which mkfs.ext4` || { echo "E: You must have mkfs.ext3" && exit 1; }
 TUNE2FS=`which tune2fs` || { echo "E: You must have tune2fs" && exit 1; }
 QEMUIMG=`which qemu-img` || { echo "E: You must have qemu-img" && exit 1; }
 GRUBMKIMAGE=`which grub-mkimage` || { echo "E: You must have grub-mkimage" && exit 1; }
-GRUBBIOSSETUP=`which grub-bios-setup` || { echo "E: You must have grub-bios-setup" && exit 1; }
+GRUBSETUP=`which grub-setup` || { echo "E: You must have grub-setup" && exit 1; }
 
 ${QEMUIMG} create -f raw ${IMGFILE} 1G
 losetup ${DEVICE} ${IMGFILE}
@@ -63,7 +63,7 @@ ${GRUBMKIMAGE} \
   --prefix=/boot \
   biosdisk part_msdos ext2
 
-${GRUBBIOSSETUP} \
+${GRUBSETUP} \
   --directory=${MOUNTDIR}/boot/grub \
   --force \
   --device-map=device.map \
