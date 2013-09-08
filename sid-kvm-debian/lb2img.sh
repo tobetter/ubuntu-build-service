@@ -31,8 +31,7 @@ IMGFILE=$3
 MKFS=`which mkfs.ext4` || { echo "E: You must have mkfs.ext3" && exit 1; }
 TUNE2FS=`which tune2fs` || { echo "E: You must have tune2fs" && exit 1; }
 QEMUIMG=`which qemu-img` || { echo "E: You must have qemu-img" && exit 1; }
-GRUBMKIMAGE=`which grub-mkimage` || { echo "E: You must have grub-mkimage" && exit 1; }
-GRUBSETUP=`which grub-setup` || { echo "E: You must have grub-setup" && exit 1; }
+GRUBINSTALL=`which grub-install` || { echo "E: You must have grub-install" && exit 1; }
 
 ${QEMUIMG} create -f raw ${IMGFILE} 1G
 losetup ${DEVICE} ${IMGFILE}
@@ -50,23 +49,13 @@ mount ${DEVICE} ${MOUNTDIR}
 tar -zxf ${TARGZFILE} -C ${MOUNTDIR} --strip-components=1
 
 echo "I: Install grub bootloader"
-echo "(hd0) ${DEVICE}" > device.map
-echo "set prefix=(hd0)/boot/grub" > mycfg.cfg
-cp -a /usr/lib/grub/i386-pc/boot.img ${MOUNTDIR}/boot/grub/
-cp -a /usr/lib/grub/i386-pc ${MOUNTDIR}/boot/grub/
-
-${GRUBMKIMAGE} \
-  --config=mycfg.cfg \
+${GRUBINSTALL} \
+  --modules="part_msdos" \
+  --boot-directory=${MOUNTDIR}/boot \
+  --target=i386-pc \
   --directory=/usr/lib/grub/i386-pc \
-  --output=${MOUNTDIR}/boot/grub/core.img \
-  --format=i386-pc \
-  --prefix=/boot \
-  biosdisk part_msdos ext2
-
-${GRUBSETUP} \
-  --directory=${MOUNTDIR}/boot/grub \
   --force \
-  --device-map=device.map \
+  --disk-module=biosdisk \
   ${DEVICE}
 
 echo "I: Create grub configuration file"
@@ -88,7 +77,7 @@ menuentry 'linux' {
 EOF
 
 umount ${MOUNTDIR}
-rm -rf ${MOUNTDIR} device.map mycfg.cfg
+rm -rf ${MOUNTDIR} ${MOUNTDIR}/boot/grub/device.map
 losetup -d ${DEVICE}
 
 echo "I: Done"
