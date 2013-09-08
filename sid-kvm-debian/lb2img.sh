@@ -27,10 +27,12 @@ IMGFILE=$3
 # we must be root
 [ `whoami` = "root" ] || { echo "E: You must be root" && exit 1; }
 
-# we must have mkfs/tune2fs/qemu-img
+# we must have few tools
 MKFS=`which mkfs.ext4` || { echo "E: You must have mkfs.ext3" && exit 1; }
 TUNE2FS=`which tune2fs` || { echo "E: You must have tune2fs" && exit 1; }
 QEMUIMG=`which qemu-img` || { echo "E: You must have qemu-img" && exit 1; }
+GRUBMKIMAGE=`which grub-mkimage` || { echo "E: You must have grub-mkimage" && exit 1; }
+GRUBBIOSSETUP=`which grub-bios-setup` || { echo "E: You must have grub-bios-setup" && exit 1; }
 
 ${QEMUIMG} create -f raw ${IMGFILE} 1G
 losetup ${DEVICE} ${IMGFILE}
@@ -53,7 +55,7 @@ echo "set prefix=(hd0)/boot/grub" > mycfg.cfg
 cp -a /usr/lib/grub/i386-pc/boot.img ${MOUNTDIR}/boot/grub/
 cp -a /usr/lib/grub/i386-pc ${MOUNTDIR}/boot/grub/
 
-grub-mkimage \
+${GRUBMKIMAGE} \
   --config=mycfg.cfg \
   --directory=/usr/lib/grub/i386-pc \
   --output=${MOUNTDIR}/boot/grub/core.img \
@@ -61,7 +63,7 @@ grub-mkimage \
   --prefix=/boot \
   biosdisk part_msdos ext2
 
-grub-bios-setup \
+${GRUBBIOSSETUP} \
   --directory=${MOUNTDIR}/boot/grub \
   --force \
   --device-map=device.map \
