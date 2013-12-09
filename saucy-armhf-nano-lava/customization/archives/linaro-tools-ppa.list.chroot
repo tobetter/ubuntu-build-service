@@ -1,0 +1,3 @@
+# Linaro Tools PPA
+deb http://ppa.launchpad.net/linaro-maintainers/tools/ubuntu @DISTRIBUTION@ main
+deb-src http://ppa.launchpad.net/linaro-maintainers/tools/ubuntu @DISTRIBUTION@ main
