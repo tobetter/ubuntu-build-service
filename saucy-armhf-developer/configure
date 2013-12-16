@@ -30,7 +30,7 @@ lb config \
  --iso-volume 'Linaro saucy $(date +%Y%m%d-%H:%M)' \
  --linux-flavours none \
  --linux-packages none \
- --mirror-bootstrap "http://localhost/~ubuntu/saucy" \
+ --mirror-bootstrap "http://localhost:3142/ports.ubuntu.com/ubuntu-ports/" \
  --mode ubuntu \
  --security false \
  --system normal \
