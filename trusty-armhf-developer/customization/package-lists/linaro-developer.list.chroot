@@ -1,6 +1,6 @@
 # Packages needed for Linaro - Developer
 #linaro-development
-#linaro-overlay-minimal
+linaro-overlay-minimal
 adduser
 alsa-utils
 apt
