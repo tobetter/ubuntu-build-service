@@ -1,6 +1,6 @@
-#!/bin/sh  
+#!/bin/sh
 
-cd binary/boot/filesystem.dir
+cd binary
 
 echo "I:commented out such that dpkg and apt will work for NOW"
 echo "I: rm /var/lib/dpkg"
