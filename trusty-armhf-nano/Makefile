@@ -7,7 +7,9 @@
 
 # You need live-build package installed and superuser privileges.
 
-IMAGEPREFIX=linaro-trusty-nano-`date +%Y%m%d`-$(BUILD_NUMBER)
+BUILD_NUMBER?=1
+BASEIMG=linaro-trusty-nano
+IMAGEPREFIX=$(BASEIMG)-`date +%Y%m%d`-$(BUILD_NUMBER)
 LOGFILE=$(IMAGEPREFIX).build-log.txt
 CONFIGFILE=$(IMAGEPREFIX).config.tar.bz2
 LISTFILE=$(IMAGEPREFIX).contents
@@ -29,4 +31,5 @@ all:
 
 clean:
 	sudo lb clean --purge
-	rm -f $(IMAGEPREFIX).*
+	rm -f $(BASEIMG)-*
+	rm -rf config
