@@ -1,0 +1,3 @@
+# QCOM Overlay PPA
+deb http://localhost:3142/ppa.launchpad.net/linaro-maintainers/qcom-overlay/ubuntu @DISTRIBUTION@ main main/debug
+deb-src http://localhost:3142/ppa.launchpad.net/linaro-maintainers/qcom-overlay/ubuntu @DISTRIBUTION@ main
