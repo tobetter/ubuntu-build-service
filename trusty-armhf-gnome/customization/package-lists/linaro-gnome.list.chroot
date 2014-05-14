@@ -2,4 +2,6 @@
 gnome-core
 linaro-overlay-minimal
 linaro-x11-base
+rhythmbox
+totem
 xserver-xorg-video-freedreno
