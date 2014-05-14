@@ -1,5 +1,5 @@
 # Packages needed for Linaro - Gnome
 gnome-core
 linaro-overlay-minimal
-#ubuntu-gnome-desktop
-ubuntu-minimal
+linaro-x11-base
+xserver-xorg-video-freedreno
