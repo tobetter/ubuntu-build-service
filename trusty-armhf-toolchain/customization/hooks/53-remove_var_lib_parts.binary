@@ -1,0 +1,15 @@
+#!/bin/sh
+
+cd binary
+
+echo "I:commented out such that dpkg and apt will work for NOW"
+echo "I: rm /var/lib/dpkg"
+#rm -rf ./var/lib/dpkg
+echo "I: rm /var/lib/apt"
+rm -f ./var/lib/apt/lists/*Packages
+rm -f ./var/lib/apt/lists/*Sources
+rm -f ./var/lib/apt/lists/*Release
+rm -f ./var/lib/apt/lists/*Release.gpg
+echo "I: rm /var/cache/apt"
+rm -f ./var/cache/apt/pkgcache.bin
+rm -f ./var/cache/apt/srcpkgcache.bin
