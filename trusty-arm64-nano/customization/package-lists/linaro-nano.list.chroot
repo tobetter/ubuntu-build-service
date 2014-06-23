@@ -12,6 +12,7 @@ iproute
 iputils-ping
 isc-dhcp-client
 kbd
+linaro-overlay-minimal
 makedev
 mawk
 module-init-tools

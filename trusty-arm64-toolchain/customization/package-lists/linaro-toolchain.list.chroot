@@ -27,6 +27,7 @@ libisl-dev
 libmpc-dev
 libmpfr-dev
 libncurses5-dev
+linaro-overlay-minimal
 lsyncd
 makedev
 mawk
