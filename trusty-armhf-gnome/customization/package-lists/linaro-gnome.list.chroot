@@ -5,4 +5,4 @@ linaro-x11-base
 rhythmbox
 totem
 xserver-xorg-video-freedreno
-gst-libav1.0
+gstreamer1.0-libav
