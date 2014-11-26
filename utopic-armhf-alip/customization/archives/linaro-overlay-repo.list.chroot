@@ -1,0 +1,3 @@
+# Linaro repository PPA
+deb http://localhost:3142/repo.linaro.org/ubuntu/linaro-overlay @DISTRIBUTION@ main
+deb-src http://localhost:3142/repo.linaro.org/ubuntu/linaro-overlay @DISTRIBUTION@ main
