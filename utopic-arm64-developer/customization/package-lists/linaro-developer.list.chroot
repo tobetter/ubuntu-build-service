@@ -50,6 +50,8 @@ net-tools
 netbase
 netcat-openbsd
 ntpdate
+obexftp
+obexpushd
 openssh-client
 openssh-server
 oprofile
