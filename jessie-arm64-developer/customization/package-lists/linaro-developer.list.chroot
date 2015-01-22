@@ -37,7 +37,7 @@ iw
 kbd
 kmod
 less
-#linaro-overlay-minimal
+linaro-overlay-minimal
 lm-sensors
 lsb-release
 lsof
