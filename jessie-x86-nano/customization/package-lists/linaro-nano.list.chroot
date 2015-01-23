@@ -11,6 +11,7 @@ iproute2
 iputils-ping
 isc-dhcp-client
 kbd
+linaro-overlay-minimal
 makedev
 mawk
 module-init-tools
@@ -19,6 +20,7 @@ net-tools
 netbase
 netcat-openbsd
 netperf
+nfs-common
 ntpdate
 openssh-client
 openssh-server
