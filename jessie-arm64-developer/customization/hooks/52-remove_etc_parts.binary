@@ -4,3 +4,4 @@ cd binary
 
 echo "I: rm /etc/resolv.conf"
 rm -f ./etc/resolv.conf
+ln -sf /etc/resolvconf/run/resolv.conf ./etc/resolv.conf
