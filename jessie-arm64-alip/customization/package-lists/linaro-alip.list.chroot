@@ -23,7 +23,7 @@ gdbserver
 git
 gnupg
 hostapd
-#iceweasel
+iceweasel
 i2c-tools
 idlestat
 ifupdown
@@ -61,11 +61,14 @@ obexpushd
 openssh-client
 openssh-server
 #oprofile
+policykit-1
 powerdebug
 powertop
 procps
+psmisc
 python-minimal
 python3
+read-edid
 resolvconf
 rsyslog
 rt-app
@@ -84,6 +87,8 @@ wget
 whiptail
 wireless-tools
 wpasupplicant
+xinit
+xserver-xorg
 xserver-xorg-input-evdev
 xserver-xorg-video-fbdev
 xserver-xorg-video-modesetting
