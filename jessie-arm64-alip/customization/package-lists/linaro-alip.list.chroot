@@ -89,6 +89,7 @@ wget
 whiptail
 wireless-tools
 wpasupplicant
+x11-xserver-utils
 xinit
 xserver-xorg
 xserver-xorg-input-evdev
