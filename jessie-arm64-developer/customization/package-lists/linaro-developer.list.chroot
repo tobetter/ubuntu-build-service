@@ -60,6 +60,7 @@ openssh-server
 powerdebug
 powertop
 procps
+pulseaudio-module-bluetooth
 python-minimal
 python3
 resolvconf
@@ -79,3 +80,5 @@ wget
 whiptail
 wireless-tools
 wpasupplicant
+xmms2-plugin-mad
+xmms2-plugin-pulse
