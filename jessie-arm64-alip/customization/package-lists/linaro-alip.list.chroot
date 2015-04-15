@@ -4,6 +4,7 @@ alsa-utils
 apt
 apt-utils
 babeltrace
+blueman
 bluez
 btrfs-tools
 build-essential
@@ -46,6 +47,7 @@ lsof
 #ltrace
 lxde
 #lxdm
+lxmusic
 makedev
 mawk
 module-init-tools
@@ -61,6 +63,7 @@ obexpushd
 openssh-client
 openssh-server
 #oprofile
+pavucontrol
 policykit-1
 powerdebug
 powertop
@@ -91,6 +94,8 @@ wireless-tools
 wpasupplicant
 x11-xserver-utils
 xinit
+xmms2-plugin-mad
+xmms2-plugin-pulse
 xserver-xorg
 xserver-xorg-input-evdev
 xserver-xorg-video-fbdev
