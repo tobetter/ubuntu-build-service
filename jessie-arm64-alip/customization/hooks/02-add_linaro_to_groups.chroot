@@ -1,6 +1,6 @@
 #!/bin/sh -x 
 
-DEFGROUPS="admin,adm,dialout,cdrom,plugdev,audio,dip,video"
+DEFGROUPS="admin,adm,dialout,cdrom,audio,dip,video,plugdev,bluetooth,pulse-access"
 
 /bin/egrep  -i "^admin" /etc/group
 if [ $? -eq 0 ]; then
@@ -8,6 +8,13 @@ if [ $? -eq 0 ]; then
 else
    echo "User admin does not exists in /etc/group must create"
    groupadd admin
+fi
+/bin/egrep  -i "^adm" /etc/group
+if [ $? -eq 0 ]; then
+   echo "User adm exists in /etc/group"
+else
+   echo "User adm does not exists in /etc/group must create"
+   groupadd adm
 fi
 /bin/egrep  -i "^dialout" /etc/group
 if [ $? -eq 0 ]; then
@@ -22,13 +29,6 @@ if [ $? -eq 0 ]; then
 else
    echo "User cdrom does not exists in /etc/group must create"
    groupadd cdrom 
-fi
-/bin/egrep  -i "^plugdev" /etc/group
-if [ $? -eq 0 ]; then
-   echo "User plugdev exists in /etc/group"
-else
-   echo "User plugdev does not exists in /etc/group must create"
-   groupadd plugdev
 fi
 /bin/egrep  -i "^audio" /etc/group
 if [ $? -eq 0 ]; then
@@ -51,12 +51,26 @@ else
    echo "User video does not exists in /etc/group must create"
    groupadd video
 fi
-/bin/egrep  -i "^adm" /etc/group
+/bin/egrep  -i "^plugdev" /etc/group
 if [ $? -eq 0 ]; then
-   echo "User adm exists in /etc/group"
+   echo "User plugdev exists in /etc/group"
 else
-   echo "User adm does not exists in /etc/group must create"
-   groupadd adm
+   echo "User plugdev does not exists in /etc/group must create"
+   groupadd plugdev
+fi
+/bin/egrep  -i "^bluetooth" /etc/group
+if [ $? -eq 0 ]; then
+   echo "User bluetooth exists in /etc/group"
+else
+   echo "User bluetooth does not exists in /etc/group must create"
+   groupadd bluetooth
+fi
+/bin/egrep  -i "^pulse-access" /etc/group
+if [ $? -eq 0 ]; then
+   echo "User pulse-access exists in /etc/group"
+else
+   echo "User pulse-access does not exists in /etc/group must create"
+   groupadd pulse-access
 fi
 
 echo "I: add linaro to ($DEFGROUPS) groups"
