@@ -13,6 +13,7 @@ console-setup
 cpufrequtils
 crda
 curl
+dbux-x11
 debconf
 debconf-i18n
 debian-keyring
