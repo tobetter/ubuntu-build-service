@@ -52,6 +52,7 @@ lxde
 lxmusic
 makedev
 mawk
+mesa-utils-extra
 module-init-tools
 mountall
 #mutrace
@@ -95,6 +96,7 @@ whiptail
 wireless-tools
 wpasupplicant
 x11-xserver-utils
+x11-utils
 xinit
 xmms2-client-cli
 xmms2-plugin-mad
