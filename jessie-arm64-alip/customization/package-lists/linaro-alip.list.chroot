@@ -96,8 +96,10 @@ wireless-tools
 wpasupplicant
 x11-xserver-utils
 xinit
+xmms2-client-cli
 xmms2-plugin-mad
 xmms2-plugin-pulse
+xmms2-plugin-vorbis
 xserver-xorg
 xserver-xorg-input-evdev
 xserver-xorg-video-fbdev
