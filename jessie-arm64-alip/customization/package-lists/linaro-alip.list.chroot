@@ -20,6 +20,7 @@ debian-keyring
 #devmem2
 eject
 fbset
+gconf2
 gdb
 gdbserver
 git
