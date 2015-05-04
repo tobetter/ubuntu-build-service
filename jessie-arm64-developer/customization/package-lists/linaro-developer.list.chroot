@@ -64,6 +64,7 @@ pulseaudio-module-bluetooth
 python-minimal
 python3
 resolvconf
+rfkill
 rsyslog
 rt-app
 strace

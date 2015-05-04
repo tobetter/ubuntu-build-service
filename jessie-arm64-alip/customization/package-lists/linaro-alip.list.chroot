@@ -78,6 +78,7 @@ python-minimal
 python3
 read-edid
 resolvconf
+rfkill
 rsyslog
 rt-app
 strace
