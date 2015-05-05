@@ -61,6 +61,7 @@ netbase
 netcat-openbsd
 netperf
 ntpdate
+obconf
 obexftp
 obexpushd
 openssh-client
