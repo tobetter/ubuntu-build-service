@@ -23,6 +23,7 @@ fbset
 gconf2
 gdb
 gdbserver
+gdisk
 git
 gnupg
 hostapd

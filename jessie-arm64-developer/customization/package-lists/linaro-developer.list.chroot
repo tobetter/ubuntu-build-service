@@ -20,6 +20,7 @@ eject
 fbset
 gdb
 gdbserver
+gdisk
 git
 gnupg
 hostapd
