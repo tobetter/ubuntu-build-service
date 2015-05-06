@@ -82,5 +82,7 @@ wget
 whiptail
 wireless-tools
 wpasupplicant
+xmms2-client-cli
 xmms2-plugin-mad
 xmms2-plugin-pulse
+xmms2-plugin-vorbis
