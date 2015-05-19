@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cd binary
+
+echo "I: rm /etc/resolv.conf"
+rm -f ./etc/resolv.conf
+
+echo "I: rm /etc/X11 and /etc/firefox"
+rm -rf ./etc/X11
+rm -rf ./etc/firefox
