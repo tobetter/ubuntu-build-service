@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "I: run apt-get update"
+apt-get update
+
+echo "I: install extra package"
+apt-get install --yes build-essential git
+
+echo "I: install tests"
+#nano_tests=(pwrmgmt gatortests perf device-tree)
+#for nano_test in ${nano_tests[@]}; do
+#    echo "lava-test install ${nano_test}"
+#done

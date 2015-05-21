@@ -1,0 +1,105 @@
+#!/bin/sh
+
+cd binary
+
+echo "I: rm /usr/share/man"
+rm -rf ./usr/share/man/*
+# xkb
+echo "I: rm /usr/share/X11"
+rm -rf ./usr/share/X11
+
+echo "I: rm /usr/share/xul-ext"
+rm -rf ./usr/share/xul-ext
+
+echo "I: slim /usr/share/i18n"
+rm -rf ./usr/share/i18n/locales/a*
+rm -rf ./usr/share/i18n/locales/b*
+rm -rf ./usr/share/i18n/locales/c*
+rm -rf ./usr/share/i18n/locales/d*
+rm -rf ./usr/share/i18n/locales/es*
+rm -rf ./usr/share/i18n/locales/f*
+rm -rf ./usr/share/i18n/locales/g*
+rm -rf ./usr/share/i18n/locales/h*
+rm -rf ./usr/share/i18n/locales/j*
+rm -rf ./usr/share/i18n/locales/k*
+rm -rf ./usr/share/i18n/locales/l*
+rm -rf ./usr/share/i18n/locales/n*
+rm -rf ./usr/share/i18n/locales/m*
+rm -rf ./usr/share/i18n/locales/o*
+rm -rf ./usr/share/i18n/locales/p*
+rm -rf ./usr/share/i18n/locales/r*
+rm -rf ./usr/share/i18n/locales/s*
+rm -rf ./usr/share/i18n/locales/t*
+rm -rf ./usr/share/i18n/locales/u*
+rm -rf ./usr/share/i18n/locales/v*
+rm -rf ./usr/share/i18n/locales/w*
+rm -rf ./usr/share/i18n/locales/y*
+rm -rf ./usr/share/i18n/locales/z*
+rm -rf ./usr/share/i18n/locales/el*
+rm -rf ./usr/share/i18n/locales/eo*
+rm -rf ./usr/share/i18n/locales/et*
+rm -rf ./usr/share/i18n/locales/it*
+rm -rf ./usr/share/i18n/locales/iu*
+rm -rf ./usr/share/i18n/locales/iw*
+
+
+echo "I: pair down zoneinfo to just UTC"
+rm -rf ./usr/share/zoneinfo/A*
+rm -rf ./usr/share/zoneinfo/B*
+rm -rf ./usr/share/zoneinfo/C*
+rm -rf ./usr/share/zoneinfo/E*
+rm -rf ./usr/share/zoneinfo/F*
+rm -rf ./usr/share/zoneinfo/H*
+rm -rf ./usr/share/zoneinfo/I*
+rm -rf ./usr/share/zoneinfo/J*
+rm -rf ./usr/share/zoneinfo/K*
+rm -rf ./usr/share/zoneinfo/L*
+rm -rf ./usr/share/zoneinfo/M*
+rm -rf ./usr/share/zoneinfo/N*
+rm -rf ./usr/share/zoneinfo/P*
+rm -rf ./usr/share/zoneinfo/r*
+rm -rf ./usr/share/zoneinfo/R*
+rm -rf ./usr/share/zoneinfo/Singapore
+rm -rf ./usr/share/zoneinfo/T*
+rm -rf ./usr/share/zoneinfo/US
+rm -rf ./usr/share/zoneinfo/W*
+rm -rf ./usr/share/zoneinfo/Z*
+
+echo "I: pair down /usr/share/locale"
+rm -rf ./usr/share/locale/a*
+rm -rf ./usr/share/locale/b*
+rm -rf ./usr/share/locale/c*
+rm -rf ./usr/share/locale/d*
+rm -rf ./usr/share/locale/e*
+rm -rf ./usr/share/locale/f*
+rm -rf ./usr/share/locale/g*
+rm -rf ./usr/share/locale/h*
+rm -rf ./usr/share/locale/i*
+rm -rf ./usr/share/locale/j*
+rm -rf ./usr/share/locale/k*
+rm -rf ./usr/share/locale/lt
+rm -rf ./usr/share/locale/m*
+rm -rf ./usr/share/locale/n*
+rm -rf ./usr/share/locale/p*
+rm -rf ./usr/share/locale/r*
+rm -rf ./usr/share/locale/s*
+rm -rf ./usr/share/locale/t*
+rm -rf ./usr/share/locale/u*
+rm -rf ./usr/share/locale/z*
+
+echo "I: remove /usr/share/info"
+rm -rf ./usr/share/info
+
+echo "I: pair down /usr/share/i18n/charmaps"
+rm -rf ./usr/share/i18n/charmaps/W*
+rm -rf ./usr/share/i18n/charmaps/V*
+rm -rf ./usr/share/i18n/charmaps/T*
+rm -rf ./usr/share/i18n/charmaps/S*
+rm -rf ./usr/share/i18n/charmaps/R*
+rm -rf ./usr/share/i18n/charmaps/P*
+rm -rf ./usr/share/i18n/charmaps/L*
+rm -rf ./usr/share/i18n/charmaps/K*
+rm -rf ./usr/share/i18n/charmaps/J*
+rm -rf ./usr/share/i18n/charmaps/E*
+rm -rf ./usr/share/i18n/charmaps/H*
+rm -rf ./usr/share/i18n/charmaps/B*

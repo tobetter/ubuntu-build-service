@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cd binary
+
+echo "I: rm /etc/resolv.conf"
+rm -f ./etc/resolv.conf
+
+#echo "I: rm /etc/init/tty[2-6].conf"
+#rm -f ./etc/init/tty2.conf
+#rm -f ./etc/init/tty3.conf
+#rm -f ./etc/init/tty4.conf
+#rm -f ./etc/init/tty5.conf
+#rm -f ./etc/init/tty6.conf
