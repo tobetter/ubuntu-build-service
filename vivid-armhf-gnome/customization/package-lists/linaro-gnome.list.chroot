@@ -1,5 +1,6 @@
 # Packages needed for Linaro - Gnome
 gnome-core
+adwaita-icon-theme-full
 linaro-overlay-minimal
 linaro-x11-base
 rhythmbox
