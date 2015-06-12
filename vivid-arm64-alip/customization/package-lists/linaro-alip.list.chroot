@@ -11,6 +11,7 @@ gdisk
 gstreamer1.0-libav
 iw
 lightdm
+lightdm-gtk-greeter
 linaro-overlay-minimal
 linaro-x11-base
 lxde
