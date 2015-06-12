@@ -1,0 +1,12 @@
+# Packages needed for Linaro - ALIP
+adwaita-icon-theme-full
+blueman
+bluez
+gstreamer1.0-libav
+linaro-overlay-minimal
+linaro-x11-base
+lubuntu-core
+lxmusic
+pulseaudio-module-bluetooth
+pulseaudio-module-x11
+xserver-xorg-video-fbdev
