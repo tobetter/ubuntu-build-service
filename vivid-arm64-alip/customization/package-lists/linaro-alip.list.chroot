@@ -18,6 +18,7 @@ lxde
 lxmusic
 lxpanel
 lxsession
+lxsession-logout
 obconf
 openbox
 openssh-client
