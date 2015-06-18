@@ -6,6 +6,7 @@ bc
 blueman
 bluez
 ca-certificates
+cpufrequtils
 crda
 curl
 dbus-x11
@@ -16,6 +17,7 @@ fonts-dejavu-core
 fonts-freefont-ttf
 gdisk
 gstreamer1.0-libav
+htop
 iw
 lightdm
 lightdm-gtk-greeter

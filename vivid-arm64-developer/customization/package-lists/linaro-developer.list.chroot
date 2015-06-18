@@ -23,6 +23,7 @@ gdisk
 git
 gnupg
 hostapd
+htop
 i2c-tools
 idlestat
 ifupdown
