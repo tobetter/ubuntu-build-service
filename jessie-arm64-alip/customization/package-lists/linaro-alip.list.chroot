@@ -1,14 +1,18 @@
 # Packages needed for Linaro - ALIP
 adduser
+alsa-base
 alsa-utils
+anacron
 apt
 apt-utils
 babeltrace
+bc
 blueman
 bluez
 btrfs-tools
 build-essential
 bzip2
+ca-certificates
 console-setup
 cpufrequtils
 crda
@@ -18,17 +22,21 @@ debconf
 debconf-i18n
 debian-keyring
 #devmem2
+dmz-cursor-theme
 eject
 fbset
+fonts-freefont-ttf
 gconf2
 gdb
 gdbserver
 gdisk
 git
 gnupg
+gstreamer1.0-plugins-bad
 hostapd
-iceweasel
+htop
 i2c-tools
+iceweasel
 idlestat
 ifupdown
 initramfs-tools
@@ -50,7 +58,12 @@ lsof
 #ltrace
 lxde
 #lxdm
+lxlauncher
 lxmusic
+lxsession-default-apps
+lxsession-logout
+lxshortcut
+lxtask
 makedev
 mawk
 mesa-utils-extra
@@ -61,6 +74,7 @@ net-tools
 netbase
 netcat-openbsd
 netperf
+network-manager-gnome
 ntpdate
 obconf
 obexftp
@@ -89,6 +103,7 @@ trace-cmd
 #ubuntu-keyring
 udev
 #ureadahead
+usb-modeswitch
 usbutils
 user-setup
 vim
@@ -98,8 +113,8 @@ wget
 whiptail
 wireless-tools
 wpasupplicant
-x11-xserver-utils
 x11-utils
+x11-xserver-utils
 xinit
 xmms2-client-cli
 xmms2-plugin-mad
@@ -109,3 +124,5 @@ xserver-xorg
 xserver-xorg-input-evdev
 xserver-xorg-video-fbdev
 xserver-xorg-video-modesetting
+xterm
+zip
