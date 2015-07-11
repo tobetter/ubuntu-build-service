@@ -21,6 +21,7 @@ dbus-x11
 debconf
 debconf-i18n
 debian-keyring
+default-jre
 #devmem2
 dmz-cursor-theme
 eject
