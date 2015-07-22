@@ -17,6 +17,7 @@ fonts-dejavu-core
 fonts-freefont-ttf
 gdisk
 gstreamer1.0-libav
+gstreamer1.0-plugins-bad
 htop
 iw
 lightdm
