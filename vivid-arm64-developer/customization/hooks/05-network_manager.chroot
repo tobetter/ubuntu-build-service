@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "I: run apt-get update"
+apt-get update
+
+echo "I: install network-manager without recommends"
+apt-get install --yes --no-install-recommends network-manager
