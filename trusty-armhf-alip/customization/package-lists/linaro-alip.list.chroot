@@ -1,7 +1,0 @@
-# Packages needed for Linaro - ALIP
-chromium-browser
-linaro-overlay-minimal
-linaro-x11-base
-lxde
-lxdm
-wamerican

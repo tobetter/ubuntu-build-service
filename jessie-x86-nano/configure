@@ -19,7 +19,7 @@ lb config \
  --binary-filesystem ext4 \
  --binary-images tar \
  --bootloader grub \
- --bootappend-live "hostname=linaro-nano username=linaro" \
+ --bootappend-live "hostname=odroid-nano username=odroid" \
  --cache false \
  --chroot-filesystem none \
  --compression gzip \

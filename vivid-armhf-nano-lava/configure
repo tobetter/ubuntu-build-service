@@ -17,7 +17,7 @@ lb config \
  --archive-areas 'main universe' \
  --binary-filesystem ext4 \
  --binary-images tar \
- --bootappend-live "hostname=linaro-nano username=linaro" \
+ --bootappend-live "hostname=odroid-nano username=odroid" \
  --bootstrap-qemu-arch armhf \
  --bootstrap-qemu-static /usr/bin/qemu-arm-static \
  --cache false \

@@ -8,7 +8,7 @@
 # You need live-build package installed and superuser privileges.
 
 BUILD_NUMBER?=1
-BASEIMG=linaro-trusty-developer
+BASEIMG=odroid-trusty-developer
 IMAGEPREFIX=$(BASEIMG)-`date +%Y%m%d`-$(BUILD_NUMBER)
 LOGFILE=$(IMAGEPREFIX).build-log.txt
 CONFIGFILE=$(IMAGEPREFIX).config.tar.bz2

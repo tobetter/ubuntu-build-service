@@ -73,5 +73,5 @@ else
    groupadd pulse-access
 fi
 
-echo "I: add linaro to ($DEFGROUPS) groups"
-usermod -a -G ${DEFGROUPS} linaro
+echo "I: add odroid to ($DEFGROUPS) groups"
+usermod -a -G ${DEFGROUPS} odroid

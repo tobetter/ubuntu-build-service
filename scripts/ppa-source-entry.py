@@ -8,7 +8,7 @@ def main():
     if ppa == "Undefined":
         sys.exit("PPA is not defined.")
     else:
-        ppa_file = os.path.join('/var/run/linaro-ppa', ppa)
+        ppa_file = os.path.join('/var/run/odroid-ppa', ppa)
         f = open(ppa_file)
         sources_entry = f.read().strip()
         f.close()

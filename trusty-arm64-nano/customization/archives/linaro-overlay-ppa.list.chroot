@@ -1,3 +1,0 @@
-# Linaro Overlay PPA
-deb http://localhost:3142/ppa.launchpad.net/linaro-maintainers/overlay/ubuntu @DISTRIBUTION@ main
-deb-src http://localhost:3142/ppa.launchpad.net/linaro-maintainers/overlay/ubuntu @DISTRIBUTION@ main

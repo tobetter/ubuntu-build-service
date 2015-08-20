@@ -17,7 +17,7 @@ lb config \
  --archive-areas 'main universe' \
  --binary-filesystem ext4 \
  --binary-images tar \
- --bootappend-live "hostname=linaro-gnome username=linaro" \
+ --bootappend-live "hostname=odroid-gnome username=odroid" \
  --bootstrap-qemu-arch arm64 \
  --bootstrap-qemu-static /usr/bin/qemu-aarch64-static \
  --cache false \

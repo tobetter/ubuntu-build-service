@@ -17,7 +17,7 @@ lb config \
  --archive-areas 'main universe' \
  --binary-filesystem ext4 \
  --binary-images tar \
- --bootappend-live "hostname=linaro-toolchain username=linaro" \
+ --bootappend-live "hostname=odroid-toolchain username=odroid" \
  --bootstrap-qemu-arch arm64 \
  --bootstrap-qemu-static /usr/bin/qemu-aarch64-static \
  --cache false \
@@ -30,7 +30,7 @@ lb config \
  --iso-volume 'Linaro utopic $(date +%Y%m%d-%H:%M)' \
  --linux-flavours none \
  --linux-packages none \
- --mirror-bootstrap "http://localhost:3142/ports.ubuntu.com/ubuntu-ports/" \
+ --mirror-bootstrap "http://ports.ubuntu.com/ubuntu-ports/" \
  --mode ubuntu \
  --security false \
  --system normal \
