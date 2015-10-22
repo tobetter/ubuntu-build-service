@@ -11,7 +11,7 @@ set -e
 echo "I: create configuration"
 export LB_BOOTSTRAP_INCLUDE="apt-transport-https gnupg"
 lb config \
- --apt-indices none \
+ --apt-indices false \
  --apt-secure false \
  --architectures arm64 \
  --archive-areas 'main contrib non-free' \
@@ -31,9 +31,9 @@ lb config \
  --linux-flavours none \
  --linux-packages none \
  --mode debian \
- --security false \
+ --security true \
  --system normal \
- --updates false
+ --updates true
 
 echo "I: copy customization"
 test -d customization && cp -rf customization/* config/
