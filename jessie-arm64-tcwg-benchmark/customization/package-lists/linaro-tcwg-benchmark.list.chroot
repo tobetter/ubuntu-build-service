@@ -1,0 +1,10 @@
+bash
+bc
+iproute2
+iputils-ping
+make
+net-tools
+openssh-server
+rsync
+tar
+xz-utils
