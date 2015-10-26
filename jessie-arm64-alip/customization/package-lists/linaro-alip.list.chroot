@@ -17,6 +17,7 @@ btrfs-tools
 build-essential
 bzip2
 ca-certificates
+chromium
 console-setup
 cpufrequtils
 crda
@@ -53,7 +54,6 @@ gvfs
 hostapd
 htop
 i2c-tools
-iceweasel
 idlestat
 ifupdown
 initramfs-tools
