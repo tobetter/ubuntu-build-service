@@ -32,6 +32,7 @@ initramfs-tools
 initscripts
 input-utils
 iotop
+iperf
 iproute2
 iputils-ping
 isc-dhcp-client
