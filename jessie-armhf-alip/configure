@@ -16,6 +16,7 @@ lb config \
  --apt-secure false \
  --architectures armhf \
  --archive-areas 'main contrib non-free' \
+ --backports true \
  --binary-filesystem ext4 \
  --binary-images tar \
  --bootappend-live "hostname=linaro-alip username=linaro" \
