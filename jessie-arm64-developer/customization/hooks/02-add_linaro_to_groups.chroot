@@ -1,6 +1,6 @@
 #!/bin/sh -x
 
-DEFGROUPS="admin,adm,dialout,cdrom,audio,dip,video,plugdev,bluetooth,pulse-access"
+DEFGROUPS="admin,adm,dialout,cdrom,audio,dip,video,plugdev,bluetooth,pulse-access,sudo,systemd-journal,netdev,staff"
 
 IFS=','
 for group in $DEFGROUPS; do
