@@ -122,6 +122,7 @@ wireless-tools
 wpasupplicant
 x11-utils
 x11-xserver-utils
+xdg-user-dirs
 xinit
 xmms2-client-cli
 xmms2-plugin-mad
