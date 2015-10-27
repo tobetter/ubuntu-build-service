@@ -71,6 +71,7 @@ lxshortcut
 lxtask
 makedev
 mawk
+mesa-utils
 mesa-utils-extra
 module-init-tools
 mountall
