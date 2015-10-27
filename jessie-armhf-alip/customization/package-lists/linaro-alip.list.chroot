@@ -107,6 +107,7 @@ sudo
 trace-cmd
 #ubuntu-keyring
 udev
+unzip
 #ureadahead
 usb-modeswitch
 usbutils
