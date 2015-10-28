@@ -130,7 +130,7 @@ wireless-tools
 wpasupplicant
 x11-utils
 x11-xserver-utils
-xdg-user-dirs
+xdg-user-dirs-gtk
 xinit
 xmms2-client-cli
 xmms2-plugin-mad
