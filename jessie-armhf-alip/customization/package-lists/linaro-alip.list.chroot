@@ -39,6 +39,7 @@ gdbserver
 gdisk
 git
 gnome-keyring
+gnome-system-tools
 gnupg
 gstreamer1.0-libav
 gstreamer1.0-plugins-bad
