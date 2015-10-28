@@ -132,6 +132,7 @@ wpasupplicant
 x11-utils
 x11-xserver-utils
 xdg-user-dirs-gtk
+xfce4-power-manager-plugins
 xinit
 xmms2-client-cli
 xmms2-plugin-mad
