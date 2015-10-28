@@ -15,7 +15,6 @@ curl
 debconf
 debconf-i18n
 debian-keyring
-default-jre-headless
 #devmem2
 eject
 fbset
@@ -58,6 +57,7 @@ network-manager
 ntpdate
 obexftp
 obexpushd
+openjdk-8-jre-headless
 openssh-client
 openssh-server
 #oprofile
