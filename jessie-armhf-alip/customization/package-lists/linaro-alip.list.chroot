@@ -28,7 +28,12 @@ default-jre
 dmz-cursor-theme
 eject
 fbset
+fonts-arphic-ukai
+fonts-arphic-uming
 fonts-freefont-ttf
+fonts-ipafont-mincho
+fonts-ipafont-gothic
+fonts-unfonts-core
 gconf2
 gdb
 gdbserver
