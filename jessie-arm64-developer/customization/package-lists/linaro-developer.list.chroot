@@ -19,6 +19,7 @@ default-jre-headless
 #devmem2
 eject
 fbset
+file
 gdb
 gdbserver
 gdisk
