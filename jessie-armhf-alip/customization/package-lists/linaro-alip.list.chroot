@@ -27,6 +27,7 @@ default-jre
 #devmem2
 dmz-cursor-theme
 eject
+evtest
 fbset
 file
 fonts-arphic-ukai

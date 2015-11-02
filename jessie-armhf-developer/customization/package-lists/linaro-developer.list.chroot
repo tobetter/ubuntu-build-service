@@ -18,6 +18,7 @@ debian-keyring
 default-jre-headless
 #devmem2
 eject
+evtest
 fbset
 file
 gdb
