@@ -47,7 +47,7 @@ gnupg
 gstreamer1.0-libav
 gstreamer1.0-plugins-bad
 gstreamer1.0-plugins-good
-gvfs-daemons
+gvfs
 hostapd
 htop
 i2c-tools
