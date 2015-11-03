@@ -1,6 +1,7 @@
 # Packages needed for Linaro - ALIP
 96boards-artwork
 96boards-default-settings
+96boards-tools-common
 adduser
 alsa-base
 alsa-utils
