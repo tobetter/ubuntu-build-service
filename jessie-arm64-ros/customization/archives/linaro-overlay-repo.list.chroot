@@ -1,0 +1,2 @@
+deb http://repo.linaro.org/ubuntu/linaro-overlay @DISTRIBUTION@ main
+deb-src http://repo.linaro.org/ubuntu/linaro-overlay @DISTRIBUTION@ main
