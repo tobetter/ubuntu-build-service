@@ -93,7 +93,8 @@ netbase
 netcat-openbsd
 netperf
 network-manager-gnome
-nodejs
+nodejs-legacy
+npm
 ntpdate
 obconf
 obexftp
