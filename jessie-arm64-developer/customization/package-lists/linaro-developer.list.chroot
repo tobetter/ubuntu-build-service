@@ -1,5 +1,6 @@
 # Packages needed for Linaro - Developer
 96boards-tools-common
+acpi-support-base
 adduser
 alsa-utils
 apt

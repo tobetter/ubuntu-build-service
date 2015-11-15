@@ -2,6 +2,7 @@
 96boards-artwork
 96boards-default-settings
 96boards-tools-common
+acpi-support-base
 adduser
 alsa-base
 alsa-utils
