@@ -65,6 +65,7 @@ obexpushd
 openssh-client
 openssh-server
 #oprofile
+parted
 powerdebug
 powertop
 procps

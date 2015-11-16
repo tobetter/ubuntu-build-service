@@ -103,6 +103,7 @@ obexpushd
 openssh-client
 openssh-server
 #oprofile
+parted
 pavucontrol
 policykit-1
 powerdebug
