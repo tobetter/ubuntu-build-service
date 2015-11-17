@@ -13,7 +13,7 @@ export LB_BOOTSTRAP_INCLUDE="apt-transport-https gnupg"
 lb config \
  --apt-indices false \
  --apt-recommends false \
- --apt-secure false \
+ --apt-secure true \
  --architectures arm64 \
  --archive-areas 'main' \
  --backports false \
