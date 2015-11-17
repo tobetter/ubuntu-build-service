@@ -19,7 +19,7 @@ lb config \
  --backports false \
  --binary-filesystem ext4 \
  --binary-images tar \
- --bootappend-live "hostname=tcwg-benchmark username=linaro" \
+ --bootappend-live "hostname=tcwg-benchmark" \
  --bootstrap-qemu-arch arm64 \
  --bootstrap-qemu-static /usr/bin/qemu-aarch64-static \
  --cache false \
