@@ -13,7 +13,5 @@
 
 # Generate the SSH keys if non-existent
 test -f /etc/ssh/ssh_host_dsa_key || dpkg-reconfigure openssh-server
-# Generate unique hostname based on MAC address
-test -f /etc/hostname || echo "tcwg-benchmark-$(cat  /sys/class/net/eth0/address)" > /etc/hostname
 
 exit 0
