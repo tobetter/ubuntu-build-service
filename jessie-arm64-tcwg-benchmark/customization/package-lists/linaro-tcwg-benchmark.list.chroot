@@ -1,5 +1,8 @@
 bash
 bc
+bzip2
+cpufrequtils
+ifupdown
 iproute2
 iputils-ping
 make
