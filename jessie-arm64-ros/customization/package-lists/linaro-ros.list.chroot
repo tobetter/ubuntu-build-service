@@ -72,10 +72,9 @@ python-minimal
 python3
 resolvconf
 rfkill
-#ros-desktop-full-depends
 ros-perception
 ros-robot
-#ros-simulators
+ros-simulators
 ros-viz
 rsyslog
 rt-app
