@@ -1,6 +1,6 @@
 # Packages needed for Linaro - ALIP
-96boards-artwork
-96boards-default-settings
+linaro-artwork
+linaro-default-settings
 96boards-tools-common
 acpi-support-base
 adduser
