@@ -78,6 +78,7 @@ rsyslog
 rt-app
 strace
 sudo
+tee-supplicant
 trace-cmd
 #ubuntu-keyring
 udev
