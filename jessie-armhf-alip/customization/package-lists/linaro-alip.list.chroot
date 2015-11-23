@@ -73,6 +73,7 @@ less
 lightdm
 linaro-overlay-minimal
 lm-sensors
+locales
 lsb-release
 lsof
 #ltrace
