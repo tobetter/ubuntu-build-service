@@ -3,9 +3,11 @@ bc
 bzip2
 cpufrequtils
 ifupdown
+initramfs-tools
 iproute2
 iputils-ping
 make
+module-init-tools
 net-tools
 openssh-server
 rsync
