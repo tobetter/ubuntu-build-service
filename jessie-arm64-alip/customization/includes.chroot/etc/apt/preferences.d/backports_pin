@@ -1,0 +1,3 @@
+Package: *-mesa* libdrm-* libdrm2* openjdk-8-*
+Pin: release a=jessie-backports
+Pin-Priority: 500
