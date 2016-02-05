@@ -78,7 +78,6 @@ lsb-release
 lsof
 #ltrace
 lxde
-#lxdm
 lxlauncher
 lxmusic
 lxsession-default-apps
