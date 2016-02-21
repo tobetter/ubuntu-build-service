@@ -123,6 +123,7 @@ resolvconf
 rfkill
 rsyslog
 rt-app
+ssh-import-id
 strace
 sudo
 tee-supplicant
