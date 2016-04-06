@@ -44,6 +44,7 @@ iw
 kbd
 kmod
 less
+libsoc2
 linaro-overlay-minimal
 lm-sensors
 lsb-release
