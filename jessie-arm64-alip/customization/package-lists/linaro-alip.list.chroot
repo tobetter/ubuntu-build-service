@@ -117,6 +117,8 @@ psmisc
 pulseaudio-module-bluetooth
 pulseaudio-module-x11
 python-minimal
+python-mraa
+python-upm
 python3
 read-edid
 resolvconf

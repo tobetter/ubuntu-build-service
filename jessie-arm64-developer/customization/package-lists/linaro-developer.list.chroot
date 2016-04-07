@@ -72,6 +72,8 @@ powertop
 procps
 pulseaudio-module-bluetooth
 python-minimal
+python-mraa
+python-upm
 python3
 resolvconf
 rfkill
