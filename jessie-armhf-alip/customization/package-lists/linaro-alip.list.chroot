@@ -29,6 +29,7 @@ debian-keyring
 default-jre
 #devmem2
 dmz-cursor-theme
+dnsmasq-base
 eject
 evtest
 fbset
@@ -64,6 +65,7 @@ input-utils
 iotop
 iperf
 iproute2
+iptables
 iputils-ping
 isc-dhcp-client
 iw

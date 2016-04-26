@@ -19,6 +19,7 @@ debconf-i18n
 debian-keyring
 default-jre-headless
 #devmem2
+dnsmasq-base
 eject
 evtest
 fbset
@@ -38,6 +39,7 @@ input-utils
 iotop
 iperf
 iproute2
+iptables
 iputils-ping
 isc-dhcp-client
 iw
