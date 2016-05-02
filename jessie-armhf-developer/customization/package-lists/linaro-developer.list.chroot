@@ -46,7 +46,6 @@ iw
 kbd
 kmod
 less
-libsoc2
 linaro-overlay-minimal
 lm-sensors
 lsb-release
@@ -73,6 +72,7 @@ powerdebug
 powertop
 procps
 pulseaudio-module-bluetooth
+python-libsoc
 python-minimal
 python-mraa
 python-upm

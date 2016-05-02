@@ -72,7 +72,6 @@ iw
 kbd
 kmod
 less
-libsoc2
 libxatracker2
 lightdm
 linaro-overlay-minimal
@@ -119,6 +118,7 @@ procps
 psmisc
 pulseaudio-module-bluetooth
 pulseaudio-module-x11
+python-libsoc
 python-minimal
 python-mraa
 python-upm
