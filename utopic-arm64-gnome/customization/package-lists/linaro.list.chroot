@@ -1,9 +1,0 @@
-# Packages needed for Linaro - Gnome
-gnome-core
-linaro-overlay-minimal
-linaro-x11-base
-rhythmbox
-totem
-xserver-xorg-video-fbdev
-xserver-xorg-video-modesetting
-gstreamer1.0-libav
