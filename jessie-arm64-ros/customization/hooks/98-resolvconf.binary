@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "I: Create /etc/resolv.conf link"
+ln -sf /etc/resolvconf/run/resolv.conf binary/etc/resolv.conf
