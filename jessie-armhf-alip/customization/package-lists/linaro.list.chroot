@@ -91,6 +91,7 @@ makedev
 mawk
 mesa-utils
 mesa-utils-extra
+modemmanager
 module-init-tools
 mountall
 #mutrace
