@@ -30,6 +30,7 @@ network-manager
 ntpdate
 procps
 python-minimal
+resolvconf
 rsyslog
 sudo
 udev
