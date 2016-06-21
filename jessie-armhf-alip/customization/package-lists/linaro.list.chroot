@@ -49,6 +49,8 @@ glshim
 gnome-keyring
 gnome-system-tools
 gnupg
+gpsd
+gpsd-clients
 gstreamer1.0-libav
 gstreamer1.0-plugins-bad
 gstreamer1.0-plugins-good
