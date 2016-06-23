@@ -1,0 +1,7 @@
+#!/bin/sh  
+
+echo "I: create odroid user"
+adduser --gecos odroid --disabled-login odroid
+
+echo "I: set odroid user password"
+echo "odroid:odroid" | chpasswd

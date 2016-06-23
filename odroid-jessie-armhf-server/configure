@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# (C) 2012-2014 Fathi Boudra <fathi.boudra@linaro.org>
+# (C) 2016      Dongjin Kim <tobetter@gmail.com>
+
+# Create configuration for live-build.
+
+# You need live-build package installed.
+
+set -e
+
+echo "I: create configuration"
+export LB_BOOTSTRAP_INCLUDE="apt-transport-https gnupg"
+lb config \
+ --apt-indices none \
+ --apt-secure false \
+ --architectures armhf \
+ --archive-areas 'main non-free' \
+ --binary-filesystem ext4 \
+ --binary-images tar \
+ --bootappend-live "hostname=odroid-server username=root" \
+ --bootstrap-qemu-arch armhf \
+ --bootstrap-qemu-static /usr/bin/qemu-arm-static \
+ --cache false \
+ --chroot-filesystem none \
+ --compression gzip \
+ --debootstrap-options "--variant=minbase" \
+ --distribution jessie \
+ --gzip-options '-9 --rsyncable' \
+ --iso-publisher 'LinuxFactory; http://www.linuxfactory.or.kr/; tobetter@gmail.com' \
+ --iso-volume 'Debian Jessie $(date +%Y%m%d-%H:%M)' \
+ --linux-flavours none \
+ --linux-packages none \
+ --mode debian \
+ --security false \
+ --system normal \
+ --updates false
+
+echo "I: copy customization"
+cp -rf customization/* config/
+
+echo "I: done"
