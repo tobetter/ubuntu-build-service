@@ -28,7 +28,7 @@ lb config \
  --distribution utopic \
  --gzip-options '-9 --rsyncable' \
  --iso-publisher 'LinuxFactory; http://www.linuxfactory.or.kr/; tobetter@gmail.com' \
- --iso-volume 'LinuxFactory Ubuntu Utopic $(date +%Y%m%d-%H:%M)' \
+ --iso-volume 'Ubuntu Utopic $(date +%Y%m%d-%H:%M)' \
  --linux-flavours none \
  --linux-packages none \
  --mirror-bootstrap "http://ports.ubuntu.com/ubuntu-ports/" \
