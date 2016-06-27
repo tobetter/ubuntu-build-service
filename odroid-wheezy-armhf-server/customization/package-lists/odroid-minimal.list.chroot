@@ -19,6 +19,7 @@ mountall
 net-tools
 netbase
 netcat-openbsd
+network-manager
 nfs-common
 ntpdate
 odroid-firstboot
@@ -32,6 +33,7 @@ resolvconf
 rsyslog
 sudo
 udev
+usbutils
 user-setup
 uuid-runtime
 vim

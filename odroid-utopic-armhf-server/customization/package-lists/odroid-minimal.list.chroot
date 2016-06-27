@@ -21,6 +21,7 @@ net-tools
 netbase
 netcat-openbsd
 netperf
+network-manager
 nfs-common
 ntpdate
 openssh-client
@@ -33,6 +34,7 @@ resolvconf
 rsyslog
 sudo
 udev
+usbutils
 user-setup
 uuid-runtime
 vim
