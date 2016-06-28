@@ -6,3 +6,7 @@ echo "I: rm /etc/resolv.conf"
 rm -f ./etc/resolv.conf
 echo "I: ln -s /etc/resolvconf/run/resolv.conf /etc/resolv.conf"
 ln -s /etc/resolvconf/run/resolv.conf ./etc/resolv.conf
+
+UUID=`dbus-uuidgen`
+echo "I: echo ${UUID} > ./etc/machine-id"
+echo ${UUID} > ./etc/machine-id
