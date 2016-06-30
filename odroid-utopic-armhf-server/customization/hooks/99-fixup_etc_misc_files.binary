@@ -10,3 +10,9 @@ ln -s /run/resolvconf/resolv.conf ./etc/resolv.conf
 UUID=`dbus-uuidgen`
 echo "I: echo ${UUID} > ./etc/machine-id"
 echo ${UUID} > ./etc/machine-id
+
+echo "I: installing default mount table to /etc/fstab"
+cat>./etc/fstab<<__EOF
+LABEL="rootfs" / ext4 rw,relatime,data=ordered 0 0
+LABEL="BOOT" /boot vfat rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 0
+__EOF
