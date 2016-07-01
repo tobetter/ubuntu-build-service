@@ -50,3 +50,4 @@ xserver-xorg-video-modesetting
 xterm
 zip
 96boards-installer-session
+96boards-tools-common
