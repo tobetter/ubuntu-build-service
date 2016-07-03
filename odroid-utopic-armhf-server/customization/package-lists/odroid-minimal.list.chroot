@@ -21,7 +21,6 @@ net-tools
 netbase
 netcat-openbsd
 netperf
-network-manager
 nfs-common
 ntpdate
 openssh-client

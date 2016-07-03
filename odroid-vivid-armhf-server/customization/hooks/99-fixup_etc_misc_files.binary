@@ -4,8 +4,16 @@ cd binary
 
 echo "I: rm /etc/resolv.conf"
 rm -f ./etc/resolv.conf
-echo "I: ln -s /etc/resolvconf/run/resolv.conf /etc/resolv.conf"
-ln -s /etc/resolvconf/run/resolv.conf ./etc/resolv.conf
+echo "I: ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf"
+ln -s /run/systemd/resolve/resolv.conf ./etc/resolv.conf
+
+cat>./etc/systemd/network/20-dhcp.network<<__EOF
+[Match]
+Name=e*
+
+[Network]
+DHCP=yes
+__EOF
 
 UUID=`dbus-uuidgen`
 echo "I: echo ${UUID} > ./etc/machine-id"
