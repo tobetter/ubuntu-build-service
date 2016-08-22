@@ -119,7 +119,6 @@ powertop
 procps
 psmisc
 pulseaudio-module-bluetooth
-pulseaudio-module-x11
 python-minimal
 python3
 read-edid

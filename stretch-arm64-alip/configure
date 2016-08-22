@@ -25,7 +25,7 @@ lb config \
  --cache false \
  --chroot-filesystem none \
  --compression gzip \
- --debootstrap-options "--variant=minbase" \
+ --debootstrap-options "--variant=minbase --include=apt-transport-https,gnupg" \
  --distribution stretch \
  --gzip-options '-9 --rsyncable' \
  --iso-publisher 'Linaro; http://www.linaro.org/; linaro-dev@lists.linaro.org' \
