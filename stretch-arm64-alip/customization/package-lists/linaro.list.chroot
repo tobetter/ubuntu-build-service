@@ -1,9 +1,6 @@
 # Packages needed for Linaro - ALIP
-#96boards-tools-common
 #chromium
 #glshim
-#linaro-artwork
-#linaro-default-settings
 #ltrace
 #mutrace
 #netperf
@@ -12,6 +9,7 @@
 #python-upm
 #rt-app
 #tee-supplicant
+96boards-tools-common
 acpi-support-base
 adduser
 alsa-base
@@ -83,6 +81,8 @@ kmod
 less
 libxatracker2
 lightdm
+linaro-artwork
+linaro-default-settings
 linaro-overlay-minimal
 lm-sensors
 locales
