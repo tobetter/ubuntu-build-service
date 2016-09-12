@@ -1,14 +1,8 @@
 # Packages needed for Linaro - ALIP
-#chromium
 #glshim
 #ltrace
-#mutrace
 #netperf
-#python-libsoc
-#python-mraa
-#python-upm
 #rt-app
-#tee-supplicant
 96boards-tools-common
 acpi-support-base
 adduser
@@ -25,6 +19,7 @@ btrfs-tools
 build-essential
 bzip2
 ca-certificates
+chromium
 console-setup
 cpufrequtils
 crda
@@ -99,6 +94,7 @@ makedev
 mawk
 mesa-utils
 mesa-utils-extra
+mutrace
 net-tools
 netbase
 netcat-openbsd
@@ -119,7 +115,10 @@ powertop
 procps
 psmisc
 pulseaudio-module-bluetooth
+python-libsoc
 python-minimal
+python-mraa
+python-upm
 python3
 read-edid
 resolvconf
@@ -128,6 +127,7 @@ rsyslog
 ssh-import-id
 strace
 sudo
+tee-supplicant
 trace-cmd
 udev
 unzip
