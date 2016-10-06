@@ -19,7 +19,6 @@ kpartx
 libgl1-mesa-glx
 libgl1-mesa-dri
 lightdm
-linux-image-reference-arm64
 linaro-overlay-minimal
 makedev
 mawk
