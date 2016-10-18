@@ -1,9 +1,9 @@
 # Packages needed for Linaro - Gnome
-gnome-core
 adwaita-icon-theme-full
+gnome-core
+gstreamer1.0-libav
 linaro-overlay-minimal
 linaro-x11-base
 rhythmbox
 totem
 xserver-xorg-video-fbdev
-gstreamer1.0-libav

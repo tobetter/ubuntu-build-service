@@ -1,4 +1,6 @@
 # Packages needed for Linaro - Nano
+96boards-installer-session
+96boards-tools-common
 android-tools-fsutils
 apt
 apt-utils
@@ -16,8 +18,8 @@ iputils-ping
 isc-dhcp-client
 kbd
 kpartx
-libgl1-mesa-glx
 libgl1-mesa-dri
+libgl1-mesa-glx
 lightdm
 linaro-overlay-minimal
 makedev
@@ -37,8 +39,8 @@ resolvconf
 rsyslog
 sudo
 udev
-util-linux
 user-setup
+util-linux
 whiptail
 x11-utils
 x11-xserver-utils
@@ -49,5 +51,3 @@ xserver-xorg-video-fbdev
 xserver-xorg-video-modesetting
 xterm
 zip
-96boards-installer-session
-96boards-tools-common

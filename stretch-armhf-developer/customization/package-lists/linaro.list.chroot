@@ -1,4 +1,10 @@
 # Packages needed for Linaro - Developer
+#devmem2
+#ltrace
+#mutrace
+#oprofile
+#ubuntu-keyring
+#ureadahead
 96boards-tools-common
 acpi-support-base
 adduser
@@ -18,7 +24,6 @@ debconf
 debconf-i18n
 debian-keyring
 default-jre-headless
-#devmem2
 dnsmasq-base
 eject
 evtest
@@ -50,12 +55,10 @@ linaro-overlay-minimal
 lm-sensors
 lsb-release
 lsof
-#ltrace
 makedev
 mawk
 module-init-tools
 mountall
-#mutrace
 net-tools
 netbase
 netcat-openbsd
@@ -66,7 +69,6 @@ obexftp
 obexpushd
 openssh-client
 openssh-server
-#oprofile
 parted
 powerdebug
 powertop
@@ -86,10 +88,8 @@ strace
 sudo
 tee-supplicant
 trace-cmd
-#ubuntu-keyring
 udev
 unzip
-#ureadahead
 usbutils
 user-setup
 vim

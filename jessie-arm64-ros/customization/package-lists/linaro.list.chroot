@@ -1,4 +1,10 @@
 # Packages needed for Linaro - ROS
+#devmem2
+#ltrace
+#mutrace
+#oprofile
+#ubuntu-keyring
+#ureadahead
 96boards-tools-common
 adduser
 alsa-utils
@@ -17,7 +23,6 @@ debconf
 debconf-i18n
 debian-keyring
 default-jre-headless
-#devmem2
 eject
 evtest
 fbset
@@ -47,12 +52,10 @@ linaro-overlay-minimal
 lm-sensors
 lsb-release
 lsof
-#ltrace
 makedev
 mawk
 module-init-tools
 mountall
-#mutrace
 net-tools
 netbase
 netcat-openbsd
@@ -63,7 +66,6 @@ obexftp
 obexpushd
 openssh-client
 openssh-server
-#oprofile
 powerdebug
 powertop
 procps
@@ -81,10 +83,8 @@ rt-app
 strace
 sudo
 trace-cmd
-#ubuntu-keyring
 udev
 unzip
-#ureadahead
 usbutils
 user-setup
 vim

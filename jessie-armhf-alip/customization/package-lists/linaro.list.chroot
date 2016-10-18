@@ -1,6 +1,10 @@
 # Packages needed for Linaro - ALIP
-linaro-artwork
-linaro-default-settings
+#devmem2
+#ltrace
+#mutrace
+#oprofile
+#ubuntu-keyring
+#ureadahead
 96boards-tools-common
 acpi-support-base
 adduser
@@ -27,7 +31,6 @@ debconf
 debconf-i18n
 debian-keyring
 default-jre
-#devmem2
 dmz-cursor-theme
 dnsmasq-base
 eject
@@ -37,8 +40,8 @@ file
 fonts-arphic-ukai
 fonts-arphic-uming
 fonts-freefont-ttf
-fonts-ipafont-mincho
 fonts-ipafont-gothic
+fonts-ipafont-mincho
 fonts-unfonts-core
 gconf2
 gdb
@@ -76,12 +79,13 @@ kmod
 less
 libxatracker2
 lightdm
+linaro-artwork
+linaro-default-settings
 linaro-overlay-minimal
 lm-sensors
 locales
 lsb-release
 lsof
-#ltrace
 lxde
 lxlauncher
 lxmusic
@@ -96,7 +100,6 @@ mesa-utils-extra
 modemmanager
 module-init-tools
 mountall
-#mutrace
 net-tools
 netbase
 netcat-openbsd
@@ -110,7 +113,6 @@ obexftp
 obexpushd
 openssh-client
 openssh-server
-#oprofile
 parted
 pavucontrol
 policykit-1
@@ -136,10 +138,8 @@ strace
 sudo
 tee-supplicant
 trace-cmd
-#ubuntu-keyring
 udev
 unzip
-#ureadahead
 usb-modeswitch
 usbutils
 user-setup
