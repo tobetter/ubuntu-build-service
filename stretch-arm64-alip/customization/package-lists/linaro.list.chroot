@@ -94,6 +94,7 @@ makedev
 mawk
 mesa-utils
 mesa-utils-extra
+modemmanager
 mutrace
 net-tools
 netbase
@@ -112,6 +113,7 @@ pavucontrol
 policykit-1
 powerdebug
 powertop
+ppp
 procps
 psmisc
 pulseaudio-module-bluetooth
