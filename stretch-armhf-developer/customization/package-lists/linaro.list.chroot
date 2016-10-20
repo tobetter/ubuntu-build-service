@@ -2,7 +2,9 @@
 #devmem2
 #ltrace
 #mutrace
+#netperf
 #oprofile
+#rt-app
 #ubuntu-keyring
 #ureadahead
 96boards-tools-common
@@ -57,12 +59,9 @@ lsb-release
 lsof
 makedev
 mawk
-module-init-tools
-mountall
 net-tools
 netbase
 netcat-openbsd
-netperf
 network-manager
 ntpdate
 obexftp
@@ -82,7 +81,6 @@ python3
 resolvconf
 rfkill
 rsyslog
-rt-app
 ssh-import-id
 strace
 sudo
