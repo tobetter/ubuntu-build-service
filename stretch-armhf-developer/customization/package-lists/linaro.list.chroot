@@ -84,6 +84,8 @@ rsyslog
 ssh-import-id
 strace
 sudo
+systemd
+systemd-sysv
 tee-supplicant
 trace-cmd
 udev

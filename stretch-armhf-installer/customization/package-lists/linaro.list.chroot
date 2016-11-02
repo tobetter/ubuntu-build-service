@@ -33,6 +33,8 @@ python-minimal
 resolvconf
 rsyslog
 sudo
+systemd
+systemd-sysv
 udev
 user-setup
 util-linux
