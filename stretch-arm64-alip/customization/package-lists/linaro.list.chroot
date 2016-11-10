@@ -84,6 +84,7 @@ locales
 lsb-release
 lsof
 lxde
+lxde-common
 lxlauncher
 lxmusic
 lxsession-default-apps
@@ -106,6 +107,7 @@ ntpdate
 obconf
 obexftp
 obexpushd
+openbox
 openssh-client
 openssh-server
 parted
