@@ -86,7 +86,6 @@ strace
 sudo
 systemd
 systemd-sysv
-tee-supplicant
 trace-cmd
 udev
 unzip

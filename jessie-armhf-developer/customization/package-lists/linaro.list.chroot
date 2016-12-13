@@ -86,7 +86,6 @@ rt-app
 ssh-import-id
 strace
 sudo
-tee-supplicant
 trace-cmd
 udev
 unzip

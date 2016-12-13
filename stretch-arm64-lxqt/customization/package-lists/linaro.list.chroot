@@ -145,7 +145,6 @@ sudo
 systemd
 systemd-sysv
 systemsettings
-tee-supplicant
 trace-cmd
 udev
 unzip
