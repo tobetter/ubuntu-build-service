@@ -19,7 +19,7 @@ lb config \
  --backports false \
  --binary-filesystem ext4 \
  --binary-images tar \
- --bootappend-live "hostname=linaro-alip username=linaro" \
+ --bootappend-live "hostname=linaro-blend username=linaro" \
  --bootstrap-qemu-arch armhf \
  --bootstrap-qemu-static /usr/bin/qemu-arm-static \
  --cache false \
