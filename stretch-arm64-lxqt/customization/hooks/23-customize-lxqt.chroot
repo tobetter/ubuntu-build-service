@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Customize lxqt defaults
+if [ -e /etc/xdg/lxqt/lxqt.conf ]; then
+  sed -i "s|^theme=.*|theme=kde-plasma|" /etc/xdg/lxqt/lxqt.conf
+  sed -i "s|^icon_theme=.*|icon_theme=breeze|" /etc/xdg/lxqt/lxqt.conf
+  sed -i "s|^style=.*|style=Breeze|" /etc/xdg/lxqt/lxqt.conf
+  sed -i "s|^window_manager=.*|window_manager=kwin|" /etc/xdg/lxqt/session.conf
+  sed -i "s|^cursor_theme=.*|cursor_theme=breeze_cursors|" /etc/xdg/lxqt/session.conf
+fi
