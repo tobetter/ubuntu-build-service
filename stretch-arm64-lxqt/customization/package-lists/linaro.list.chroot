@@ -1,5 +1,6 @@
 # Packages needed for Linaro - LXQt
 #linaro-default-settings
+#ltrace
 96boards-tools-common
 acpi-support-base
 adduser
@@ -79,7 +80,6 @@ lm-sensors
 locales
 lsb-release
 lsof
-ltrace
 lximage-qt
 lxqt-about
 lxqt-admin

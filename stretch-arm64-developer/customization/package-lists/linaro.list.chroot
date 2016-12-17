@@ -1,4 +1,5 @@
 # Packages needed for Linaro - Developer
+#ltrace
 96boards-tools-common
 acpi-support-base
 adduser
@@ -49,7 +50,6 @@ linaro-overlay-minimal
 lm-sensors
 lsb-release
 lsof
-ltrace
 makedev
 mawk
 mutrace
