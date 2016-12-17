@@ -1,12 +1,4 @@
 # Packages needed for Linaro - Developer
-#devmem2
-#ltrace
-#mutrace
-#netperf
-#oprofile
-#rt-app
-#ubuntu-keyring
-#ureadahead
 96boards-tools-common
 acpi-support-base
 adduser
@@ -57,11 +49,14 @@ linaro-overlay-minimal
 lm-sensors
 lsb-release
 lsof
+ltrace
 makedev
 mawk
+mutrace
 net-tools
 netbase
 netcat-openbsd
+netperf
 network-manager
 ntpdate
 obexftp

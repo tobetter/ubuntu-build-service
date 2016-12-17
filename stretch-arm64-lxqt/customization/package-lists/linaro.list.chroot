@@ -1,9 +1,6 @@
 # Packages needed for Linaro - LXQt
 #glshim
 #linaro-default-settings
-#ltrace
-#netperf
-#rt-app
 96boards-tools-common
 acpi-support-base
 adduser
@@ -82,6 +79,7 @@ lm-sensors
 locales
 lsb-release
 lsof
+ltrace
 lximage-qt
 lxqt-about
 lxqt-admin
@@ -106,6 +104,7 @@ mutrace
 net-tools
 netbase
 netcat-openbsd
+netperf
 network-manager-gnome
 nodejs-legacy
 npm

@@ -1,7 +1,6 @@
 # Packages needed for Linaro - Nano
-#android-tools-fsutils
-#netperf
 96boards-installer-session
+android-tools-fsutils
 apt
 apt-utils
 console-setup
@@ -26,6 +25,7 @@ mesa-utils
 net-tools
 netbase
 netcat-openbsd
+netperf
 network-manager
 ntpdate
 procps

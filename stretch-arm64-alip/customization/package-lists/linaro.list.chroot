@@ -1,8 +1,5 @@
 # Packages needed for Linaro - ALIP
 #glshim
-#ltrace
-#netperf
-#rt-app
 96boards-tools-common
 acpi-support-base
 adduser
@@ -83,6 +80,7 @@ lm-sensors
 locales
 lsb-release
 lsof
+ltrace
 lxde
 lxde-common
 lxlauncher
@@ -100,6 +98,7 @@ mutrace
 net-tools
 netbase
 netcat-openbsd
+netperf
 network-manager-gnome
 nodejs-legacy
 npm
