@@ -1,5 +1,4 @@
 # Packages needed for Linaro - ALIP
-#glshim
 96boards-tools-common
 acpi-support-base
 adduser
@@ -43,6 +42,7 @@ gdb
 gdbserver
 gdisk
 git
+glshim
 gnome-keyring
 gnome-system-tools
 gnupg

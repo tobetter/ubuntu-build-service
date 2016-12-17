@@ -1,5 +1,4 @@
 # Packages needed for Linaro - LXQt
-#glshim
 #linaro-default-settings
 96boards-tools-common
 acpi-support-base
@@ -44,6 +43,7 @@ gdb
 gdbserver
 gdisk
 git
+glshim
 gnupg
 gpsd
 gpsd-clients
