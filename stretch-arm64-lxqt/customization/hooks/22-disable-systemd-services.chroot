@@ -6,4 +6,4 @@ for service in ${services[@]}; do
   systemctl disable ${service}-wait-online.service
 done
 
-ln -sf /dev/null /etc/systemd/system/multi-user.target.wants/wpa_supplicant@.service
+systemctl mask wpa_supplicant@
