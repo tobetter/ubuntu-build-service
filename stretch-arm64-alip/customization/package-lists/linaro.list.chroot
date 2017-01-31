@@ -45,6 +45,7 @@ gdbserver
 gdisk
 git
 glshim
+gnome-keyring
 gnupg
 gpsd
 gpsd-clients
