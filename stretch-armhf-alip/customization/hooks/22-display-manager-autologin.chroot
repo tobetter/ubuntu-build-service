@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Enable lightdm autologin for linaro user
+if [ -e /etc/lightdm/lightdm.conf ]; then
+  sed -i "s|^#autologin-user=.*|autologin-user=linaro|" /etc/lightdm/lightdm.conf
+  sed -i "s|^#autologin-user-timeout=.*|autologin-user-timeout=0|" /etc/lightdm/lightdm.conf
+fi
+
+# Enable sddm autologin for linaro user and configure theme
+if [ -e /usr/bin/sddm ]; then
+  /usr/bin/sddm --example-config > /etc/sddm.conf
+  sed -i "s|^Session=.*|Session=lxqt.desktop|" /etc/sddm.conf
+  sed -i "s|^User=.*|User=linaro|" /etc/sddm.conf
+  sed -i "s|^Current=.*|Current=breeze|" /etc/sddm.conf
+  sed -i "s|^CursorTheme==.*|CursorTheme=breeze_cursors|" /etc/sddm.conf
+fi
