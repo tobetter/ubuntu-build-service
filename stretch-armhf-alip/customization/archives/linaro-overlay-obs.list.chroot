@@ -1,0 +1,2 @@
+deb http://obs.linaro.org/linaro-overlay-stretch/Debian_9.0/ ./
+deb-src http://obs.linaro.org/linaro-overlay-stretch/Debian_9.0/ ./
