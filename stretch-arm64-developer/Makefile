@@ -20,14 +20,12 @@ SHA1SUMSFILE=$(IMAGEPREFIX).sha1sums.txt
 
 all:
 	set -e; sudo lb build 2>&1 | tee $(LOGFILE)
-	if [ -f binary-tar.tar.gz ]; then \
-		tar -jcf $(CONFIGFILE) auto/ config/ configure; \
-		sudo mv binary.contents $(LISTFILE); \
-		sudo mv chroot.packages.live $(PKGSFILE); \
-		sudo mv binary-tar.tar.gz $(TARGZFILE); \
-		md5sum $(LOGFILE) $(CONFIGFILE) $(LISTFILE) $(PKGSFILE) $(TARGZFILE) > $(MD5SUMSFILE); \
-		sha1sum $(LOGFILE) $(CONFIGFILE) $(LISTFILE) $(PKGSFILE) $(TARGZFILE) > $(SHA1SUMSFILE); \
-	fi
+	tar -jcf $(CONFIGFILE) auto/ config/ configure;
+	sudo mv binary.contents $(LISTFILE);
+	sudo mv chroot.packages.live $(PKGSFILE);
+	sudo mv binary-tar.tar.gz $(TARGZFILE);
+	md5sum $(LOGFILE) $(CONFIGFILE) $(LISTFILE) $(PKGSFILE) $(TARGZFILE) > $(MD5SUMSFILE);
+	sha1sum $(LOGFILE) $(CONFIGFILE) $(LISTFILE) $(PKGSFILE) $(TARGZFILE) > $(SHA1SUMSFILE);
 
 clean:
 	sudo lb clean --purge
