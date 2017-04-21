@@ -3,7 +3,7 @@
 # workaround 90s delay
 services=(NetworkManager systemd-networkd)
 for service in ${services[@]}; do
-  systemctl disable ${service}-wait-online.service
+  systemctl mask ${service}-wait-online.service
 done
 
 systemctl mask wpa_supplicant@
