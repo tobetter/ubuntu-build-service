@@ -7,4 +7,5 @@ if [ -e /etc/xdg/lxqt/lxqt.conf ]; then
   sed -i "s|^style=.*|style=Breeze|" /etc/xdg/lxqt/lxqt.conf
   sed -i "s|^window_manager=.*|window_manager=kwin|" /etc/xdg/lxqt/session.conf
   sed -i "s|^cursor_theme=.*|cursor_theme=breeze_cursors|" /etc/xdg/lxqt/session.conf
+  sed -i "s|^Wallpaper=.*|Wallpaper=/usr/share/96boards/wallpapers/96boards-default-wallpaper.jpg|" /etc/xdg/pcmanfm-qt/lxqt/settings.conf
 fi
