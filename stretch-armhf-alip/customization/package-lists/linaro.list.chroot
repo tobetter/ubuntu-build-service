@@ -1,6 +1,7 @@
 # Packages needed for Linaro - LXQt
 #linaro-default-settings
 #ltrace
+#npm
 96boards-tools-common
 acpi-support-base
 adduser
@@ -107,7 +108,6 @@ netcat-openbsd
 netperf
 network-manager-gnome
 nodejs-legacy
-npm
 ntpdate
 obexftp
 obexpushd
