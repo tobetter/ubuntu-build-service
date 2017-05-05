@@ -105,7 +105,6 @@ mutrace
 net-tools
 netbase
 netcat-openbsd
-netperf
 network-manager-gnome
 nodejs-legacy
 ntpdate

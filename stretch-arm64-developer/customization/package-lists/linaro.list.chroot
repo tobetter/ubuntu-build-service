@@ -56,7 +56,6 @@ mutrace
 net-tools
 netbase
 netcat-openbsd
-netperf
 network-manager
 ntpdate
 obexftp

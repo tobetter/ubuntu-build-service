@@ -28,7 +28,6 @@ mesa-utils
 net-tools
 netbase
 netcat-openbsd
-netperf
 network-manager
 ntpdate
 procps
