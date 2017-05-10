@@ -11,7 +11,13 @@
 #
 # By default this script does nothing.
 
+
 # Generate the SSH keys if non-existent
-test -f /etc/ssh/ssh_host_rsa_key || dpkg-reconfigure openssh-server
+if [ ! -f /etc/ssh/ssh_host_rsa_key ]
+then
+    # else ssh service start in dpkg-reconfigure will fail
+    systemctl stop ssh.socket||true
+    dpkg-reconfigure openssh-server
+fi
 
 exit 0
