@@ -1,0 +1,7 @@
+#!/bin/sh  
+
+echo "I: create root user"
+adduser --gecos root --disabled-login root
+
+echo "I: set root user password"
+echo "root:odroid" | chpasswd
